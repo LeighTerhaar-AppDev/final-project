@@ -1,0 +1,79 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Yogaflow #<%= @yogaflow.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/yogaflows" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/yogaflows/<%= @yogaflow.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit yogaflow
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_yogaflow/<%= @yogaflow.id %>" class="btn btn-block btn-outline-secondary">
+          Delete yogaflow
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @yogaflow.user_id %>
+      </dd>
+
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @yogaflow.title %>
+      </dd>
+
+      <dt>
+        Intention
+      </dt>
+      <dd>
+        <%= @yogaflow.intention %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @yogaflow.description %>
+      </dd>
+
+      <dt>
+        Yogatype
+      </dt>
+      <dd>
+        <%= @yogaflow.yogatype %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@yogaflow.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@yogaflow.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

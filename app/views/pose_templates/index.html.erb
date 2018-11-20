@@ -1,0 +1,90 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All poses
+    </h1>
+
+    <a href="/poses/new" class="btn btn-block btn-outline-secondary">
+      Add a new pose
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Yogaflow
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Sanskrit
+        </th>
+
+        <th>
+          Picture
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @poses.each do |pose| %>
+      <tr>
+        <td>
+          <%= pose.id %>
+        </td>
+
+        <td>
+          <%= pose.yogaflow_id %>
+        </td>
+
+        <td>
+          <%= pose.name %>
+        </td>
+
+        <td>
+          <%= pose.sanskrit %>
+        </td>
+
+        <td>
+          <%= pose.picture %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(pose.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(pose.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/poses/<%= pose.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

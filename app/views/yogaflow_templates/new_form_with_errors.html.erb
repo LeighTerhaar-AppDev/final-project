@@ -1,0 +1,70 @@
+<!-- Validation failure messages -->
+<% if @yogaflow.present? %>
+  <% if @yogaflow.errors.any? %>
+    <% @yogaflow.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new yogaflow
+</h1>
+
+
+<hr>
+
+<form action="/create_yogaflow" method="post">
+
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @yogaflow.user_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <input type="text" id="title" name="title" class="form-control" value="<%= @yogaflow.title %>">
+  </div>
+
+  <div class="form-group">
+    <label for="intention">
+      Intention
+    </label>
+
+    <input type="text" id="intention" name="intention" class="form-control" value="<%= @yogaflow.intention %>">
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @yogaflow.description %>">
+  </div>
+
+  <div class="form-group">
+    <label for="yogatype">
+      Yogatype
+    </label>
+
+    <input type="text" id="yogatype" name="yogatype" class="form-control" value="<%= @yogaflow.yogatype %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create yogaflow
+  </button>
+</form>
+
+<hr>
+
+<a href="/yogaflows">
+  Go back
+</a>
