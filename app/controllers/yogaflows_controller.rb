@@ -17,8 +17,9 @@ class YogaflowsController < ApplicationController
   end
   
   def show_myflows
-    @yogaflow = Yogaflow.find(params.fetch("id_to_display"))
-
+    @user = User.all
+    @yogaflow = Yogaflow.where(user_id: current_user.id)
+    
     render("yogaflow_templates/show_myflows.html.erb")
   end
 
