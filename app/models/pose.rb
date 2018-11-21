@@ -9,6 +9,7 @@
 #  picture     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  position    :string
 #
 
 class Pose < ApplicationRecord
@@ -16,4 +17,5 @@ class Pose < ApplicationRecord
 
     validates :name, presence: true
     validates :sanskrit, presence: true
+    validates :position, presence: true
 end
