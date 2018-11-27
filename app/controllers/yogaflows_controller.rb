@@ -1,6 +1,5 @@
 class YogaflowsController < ApplicationController
   def main_index
-
     render("yogaflow_templates/main_index.html.erb")
   end
   

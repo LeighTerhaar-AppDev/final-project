@@ -1,0 +1,174 @@
+﻿id,name,sanskrit,position
+1,Awkward,Utkaṭāsana,Standing
+2,Balancing the Cat,Utthita Cakravākāsana,On Arms & Legs
+3,Bird of Paradise,Svarga Dvijāsana,Standing
+4,Revolved Bird of Paradise,Parivṛtta Svarga Dvijāsana,Standing
+5,Boat,Nāvāsana,Seated
+6,Half Boat,Ardha Nāvāsana,Seated
+7,Bound Angle,Baddha Koṇāsana,Seated
+8,Supine Bound Angle,Supta Baddha Koṇāsana,Supine
+9,Bow,Dhanurāsana,Prone
+10,Half Bow,Ardha Dhanurāsana,On Arms & Legs
+11,Table Top (Box),Cakravākāsana,On Arms & Legs
+12,Table Top (Box) with Knee to Forehead,,On Arms & Legs
+13,Thread the Needle,,On Arms & Legs
+14,One Legged Box,,On Arms & Legs
+15,Bridge,Setu Bandha Sarvāṅgāsana,Supine
+16,One Legged Bridge,Eka Pāda Setu Bandha Sarvāṅgāsana,Supine
+17,Camel,Uṣṭrāsana,On Knees
+18,Cat,Marjaryāsana,On Arms & Legs
+19,Seated Forward Fold,,Seated
+20,Chair,Utkaṭāsana,Standing
+21,Chair with Prayer Hands,,Standing
+22,Revolved Chair (Chair with Prayer Twist),Parivṛtta Utkaṭāsana,Standing
+23,Bound Revolved Chair,Parivṛtta Baddha Utkaṭāsana,Standing
+24,Child's,Balāsana,Prone
+25,Extended Child's,Utthita Balāsana,Prone
+26,Cobra,Bhujaṅgāsana,Prone
+27,Corpse,Śavāsana,Supine
+28,Front Corpse,,Prone
+29,Cow,Bitilāsana,On Arms & Legs
+30,Cow Face,Gomukhāsana,Seated
+31,Crescent Lunge,,Standing
+32,Crescent Lunge with Prayer Hands,,Standing
+33,Crescent Lunge Forward Bend,,Standing
+34,Revolved Crescent Lunge,Parivṛtta Aṅjaneyāsana,Standing
+35,Revolved Crescent Lunge with Extended Arms,Utthita Parivṛtta Aṅjaneyāsana,Standing
+36,Bound Revolved Crescent Lunge,Parivṛtta Baddha Aṅjaneyāsana,Standing
+37,Crescent Lunge Twist,,Standing
+38,Reverse Crescent Lunge Twist,,Standing
+39,Crescent Lunge on the Knee,Aṅjaneyāsana,Standing
+40,Crescent Lunge Forward Bend on the Knee,,Standing
+41,Revolved Crescent Lunge on the Knee,Parivṛtta Aṅjaneyāsana,Standing
+42,Revolved Crescent Lunge on the Knee with Extended Arms,Utthita Parivṛtta Aṅjaneyāsana,Standing
+43,Bound Revolved Crescent Lunge on the Knee,Parivṛtta Baddha Aṅjaneyāsana,Standing
+44,Crescent Lunge Twist on the Knee,,Standing
+45,Reverse Crescent Lunge Twist on the Knee,,Standing
+46,Crescent Moon,Ashta Chandrāsana,Standing
+47,Crow,Bakāsana,Inversion
+48,One Legged Crow,Eka Pāda Bakāsana,Inversion
+49,Side Crow,Pārśva Bakāsana,Inversion
+50,Deaf Man's,Karṇapīḍāsana,Inversion
+51,Dolphin,,On Arms & Legs
+52,One Legged Dolphin,,On Arms & Legs
+53,Dolphin Plank,,On Arms & Legs
+54,Side Dolphin Plank,,On Arms & Legs
+55,Downward-Facing Dog,,On Arms & Legs
+56,Walk the Dog,,On Arms & Legs
+57,Downward-Facing Dog with Knee to Forehead,,On Arms & Legs
+58,Downward-Facing Dog with Stacked Hips,,On Arms & Legs
+59,One Legged Downward-Facing Dog,Eka Pāda Adho Mukha Śvānāsana,On Arms & Legs
+60,Revolved Downward-Facing Dog,Parivṛtta Adho Mukha Śvānāsana,On Arms & Legs
+61,Downward-Facing Dog with Toe Raises,,On Arms & Legs
+62,Eagle,Garuḍāsana,Standing 
+63,Easy,Sukhāsana,Seated
+64,Eight Angle,Aṣṭāvakrāsana,Inversion
+65,Extended Puppy,Uttāna Shishosana,Prone
+66,Double Pigeon / Fire Log,Agnistambhāsana,Seated
+67,Firefly,Tittibhāsana,Inversion
+68,Fish,Matsyāsana,Supine
+69,Flying Man,Eka Pāda Kouṇḍinyāsana,Inversion
+70,Revolved Flying Man,Parivṛtta Eka Pāda Kouṇḍinyāsana,Inversion
+71,Seated Forward Bend,Paśchimottānāsana,Seated
+72,Standing Forward Bend,Paśchimottānāsana,Standing
+73,Standing Forward Bend with Shoulder Opener,Uttānāsana,Standing
+74,Frog,Uttānāsana,Prone
+75,Yoga Squat / Garland,Uttānāsana,Seated
+76,Gorilla,Uttānāsana,Standing
+77,Half Moon,Ardha Chandrāsana,Standing
+78,Bound Half Moon,Baddha Ardha Chandrāsana,Standing
+79,Revolved Half Moon,Parivṛtta Ardha Chandrāsana,Standing
+80,Halfway Lift,Ardha Uttānāsana,Standing
+81,Standing Hand to Toe,Hasta Pādāṅguṣṭhāsana,Standing
+82,Extended Standing Hand to Toe,Utthita Hasta Pādāṅguṣṭhāsana,Standing
+83,Supine Hand to Toe,Utthita Hasta Pādāṅguṣṭhāsana,Supine
+84,Extended Supine Hand to Toe,Utthita Supta Hasta Pādāṅguṣṭhāsana,Supine
+85,Handstand,Adho Mukha Vṛkṣāsana,Inversion
+86,Handstand with Splits,,Inversion
+87,Happy Baby,Ānanda Bālāsana,Supine
+88,Standing Head to Knee,Daṇḍayamana Jānushīrāsana,Standing
+89,Headstand,Sālamba Śīrṣāsana I,Inversion
+90,Tripod Headstand,Sālamba Śīrṣāsana II,Inversion
+91,Tripod Headstand with Knees on Elbows,,Inversion
+92,Tripod Headstand - Spiral the Legs,Parivṛttaikapāda Śīrṣāsana II,Inversion
+93,Hero,Vīrāsana,Seated
+94,Supine Hero,Supta Vīrāsana,Supine
+95,Extended Supine Hero,Utthita Supta Vīrāsana,Supine
+96,One Legged King Pigeon,Eka Pāda Rājakapotāsana,Seated
+97,One Legged King Pigeon - Mermaid,,Seated
+98,Standing Knee to Chest,,Standing
+99,Locust,Śalabhāsana,Prone
+100,Half Locust,Ardha Śalabhāsana,Prone
+101,Dancer's ,,Standing
+102,King Dancer's,Naṭarājāsana,Standing
+103,Lotus,Padmāsana,Seated
+104,Half Lotus,Ardha Padmāsana,Seated
+105,Lunge,,On Arms & Legs
+106,Lunge with Arm Extended Forward,,On Arms & Legs
+107,Runner's Lunge,,On Arms & Legs
+108,Lunge on the Knee,,On Arms & Legs
+109,Lunge with Arm Extended Up,,On Arms & Legs
+110,Runner's Lunge with Knee Down,,On Arms & Legs
+111,Lunge on the Knee with Arm Extended Forward,,On Arms & Legs
+112,Lunge on the Knee with Arm Extended Up,,On Arms & Legs
+113,Marichi's I,Marīchyāsana I,Seated
+114,Marichi's III,Marīchyāsana III,Seated
+115,Mountain,Tāḍāsana,Standing
+116,Forearm Stand / Feathered Peacock,Pīñcha Mayūrāsana,Inversion
+117,Pigeon,Kapotāsana,On Knees
+118,Flying Pigeon,Eka Pāda Gālavāsana,Inversion
+119,Supine Pigeon,Supta Kapotāsana,Supine
+120,Plank,Phalakāsana,On Arms & Legs
+121,One Legged Plank,Eka Pāda Phalakāsana,On Arms & Legs
+122,Side Plank,Vasiṣṭhāsana,On Arms & Legs
+123,Extended Side Plank,Utthita Vasiṣṭhāsana,On Arms & Legs
+124,Upward Plank,Pūrvottānāsana,On Arms & Legs
+125,Plow,Halāsana,Inversion
+126,Pyramid,Pārśvottānāsana,Standing
+127,Half Splits / Pyramid on the Knee,,On Arms & Legs
+128,Rabbit,Sasangāsana,On Knees
+129,Legs  Up the Wall / Rejuvination,Supta Daṇḍāsana,Supine
+130,Scale,Tolāsana,Inversion
+131,Scorpion,Vṛśchikāsana I,Inversion
+132,Scorpion Handstand,Vṛśchikāsana II,Inversion
+133,Shoulder Stand,Sālamba Sarvāṅgāsana,Inversion
+134,Unsupported Shoulder Stand,Nirālamba Sarvāṅgāsana,Inversion
+135,Bound Side Angle,Baddha Pārśvakoṇāsana,Standing
+136,Extended Side Angle,Utthita Pārśvakoṇāsana,Standing
+137,Revolved Side Angle,Parivṛtta Pārśvakoṇāsana,Standing
+138,Bound Revolved Side Angle,Parivṛtta Baddha Pārśvakoṇāsana,Standing
+139,Sleeping Half Pigeon / Swan,,Prone
+140,Sphinx,,Prone
+141,Supine Spinal Twist,Supta Jaṭhara Parivartānāsana,Supine
+142,Front Splits / Monkey,Hanumānāsana,Seated
+143,Side Splits / Center Splits,Upaviṣṭha Koṇāsana,Seated
+144,Standing Splits,Ūrdhva Prasārita Eka Pādāsana,Standing
+145,Squatting Toe Balance,,Standing
+146,Squatting Toe Balance with Opened Knees,,Standing
+147,Revolved Squatting Toe Balance,,Standing
+148,Bound Revolved Squatting Toe Balance,Pāśasana,Standing
+149,Staff,Daṇḍāsana,Seated
+150,Inverted Staff,Dvi Pāda Viparīta Daṇḍāsana,On Arms & Legs
+151,Four Limbed Staff,Chaturaṅga Daṇḍāsana,On Arms & Legs
+152,Reverse Table,Pūrvottānāsana,On Arms & Legs
+153,Tortoise,Kūrmāsana,Inversion
+154,Tree,Vṛkṣāsana,Standing
+155,Triangle,Trikoṇāsana,Standing
+156,Revolved Triangle,Parivṛtta Trikoṇāsana,Standing
+157,Upward-Facing Dog,Ūrdhva Mukha Śvānāsana,On Arms & Legs
+158,Reverse Warrior,Pārśva Vīrabhadrāsana,Standing
+159,Warrior Twist,,Standing
+160,Warrior I,Vīrabhadrāsana I,Standing
+161,Warrior I Forward Bend / Arms Extended Forward,,Standing
+162,Warrior II,Vīrabhadrāsana II,Standing
+163,Warrior III / Balancing Stick,Vīrabhadrāsana III,Standing
+164,Wheel / Upward Bow,Ūrdhva Dhanurāsana,On Arms & Legs
+165,One Legged Wheel,Eka Pāda Ūrdhva Dhanurāsana,On Arms & Legs
+166,Wild Thing,Camatkārāsana,On Arms & Legs
+167,Wind Removing / Supine Knees to Chest / Supine Ball Pose,Pavanamuktāsana,Supine
+168,One Legged Wind Removing,Eka Pāda Pavanamuktāsana,Supine
+169,Dragonfly / Grasshopper,,Inversion
+170,Compass,Parivrtta Surya Yantrasana,Seated
+171,Gate ,Parighasana,On Arms & Legs
+172,Standing Figure Four,,Standing
+173,Revolved Hand to Big Toe Pose,Parivrtta Hasta Padangusthasana,Standing
