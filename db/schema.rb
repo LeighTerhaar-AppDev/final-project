@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181121004125) do
+ActiveRecord::Schema.define(version: 20181201204614) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20181121004125) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "balances", force: :cascade do |t|
+    t.integer "pose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "balancingposes", force: :cascade do |t|
+    t.integer "pose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "yogaflow_id"
@@ -65,6 +78,20 @@ ActiveRecord::Schema.define(version: 20181121004125) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "position"
+    t.boolean "balancing"
+    t.boolean "forwardfold"
+    t.boolean "legstrengthening"
+    t.boolean "legstretching"
+    t.boolean "corestrengthening"
+    t.boolean "hipstrengthening"
+    t.boolean "hipopening"
+    t.boolean "armshoulderstrengthening"
+    t.boolean "armshoulderstretching"
+    t.boolean "backstrengthening"
+    t.boolean "backstretching"
+    t.boolean "backbending"
+    t.boolean "twisting"
+    t.boolean "sidebending"
   end
 
   create_table "users", force: :cascade do |t|
