@@ -28,6 +28,11 @@
 
 class Pose < ApplicationRecord
     belongs_to :yogaflow, :required => false
+    has_many :yogaflows, :dependent => :nullify
+    has_many :usersequences, :class_name => "Sequence", :dependent => :destroy
+    has_many :usercreatedflows, :through => :usersequences, :source => :yogaflow
+
+
 
     validates :name, presence: true
     validates :sanskrit, presence: true
@@ -46,5 +51,6 @@ class Pose < ApplicationRecord
     validates :backbending, presence: true
     validates :twisting, presence: true
     validates :sidebending, presence: true
+
 
 end

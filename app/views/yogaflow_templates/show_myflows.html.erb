@@ -1,6 +1,6 @@
 <div class="card w-75">
   <div class="card-header">
-    <%= @user.find(params.fetch("id")).username %>
+    <%= current_user.username %>
   </div>
 </div> 
 
@@ -10,7 +10,7 @@
           <li class="list-group-item">
             <div class="card-header">
                 <a href="/yogaflows/<%= current_user.id %>">
-                    <%= @user.find(params.fetch("id")).username %>
+                    <%= current_user.username %>
                 </a>
                     <%= time_ago_in_words(yogaflow.created_at) %> ago
             </div>
@@ -25,10 +25,10 @@
             <%= yogaflow.description %>
         </div>
          <div>
-            <%= yogaflow.type %>
+            <%= yogaflow.yogatype %>
         </div>
         <div>
-            <%= yogaflow.pose.name %>
+            <%= yogaflow.poses.name %>
         </div>
 
     <% end %>

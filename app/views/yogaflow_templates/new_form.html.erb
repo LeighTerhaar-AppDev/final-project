@@ -8,16 +8,12 @@
 <form action="/create_yogaflow" method="post">
 
   <div class="form-group">
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" class="form-control">
+    <input type="hidden" name="user_id" class="form-control" value="<%= current_user.id %>" >
   </div>
 
   <div class="form-group">
     <label for="title">
-      Title
+      Yoga Flow Name
     </label>
 
     <input type="text" id="title" name="title" class="form-control">
@@ -41,7 +37,7 @@
 
   <div class="form-group">
     <label for="yogatype">
-      Yogatype
+      Type of Yoga
     </label>
 
     <input type="text" id="yogatype" name="yogatype" class="form-control">
@@ -57,3 +53,4 @@
 <a href="/yogaflows">
   Go back
 </a>
+

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Sequence resource:
+
+  # CREATE
+  get("/sequences/new", { :controller => "sequences", :action => "new_form" })
+  post("/create_sequence", { :controller => "sequences", :action => "create_row" })
+
+  # READ
+  get("/sequences", { :controller => "sequences", :action => "index" })
+  get("/sequences/:id_to_display", { :controller => "sequences", :action => "show" })
+
+  # UPDATE
+  get("/sequences/:prefill_with_id/edit", { :controller => "sequences", :action => "edit_form" })
+  post("/update_sequence/:id_to_modify", { :controller => "sequences", :action => "update_row" })
+
+  # DELETE
+  get("/delete_sequence/:id_to_remove", { :controller => "sequences", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the index resource:
   get("/", { :controller => "yogaflows", :action => "main_index"})
  
@@ -64,11 +83,14 @@ Rails.application.routes.draw do
   # CREATE
   get("/yogaflows/new", { :controller => "yogaflows", :action => "new_form" })
   post("/create_yogaflow", { :controller => "yogaflows", :action => "create_row" })
+  
 
   # READ
   get("/yogaflows", { :controller => "yogaflows", :action => "index" })
   get("/yogaflows/:id_to_display", { :controller => "yogaflows", :action => "show" })
-  get("/yogaflows/:user_id", { :controller => "yogaflows", :action => "show_myflows" })
+  get("/yogaflows/:id_to_display/addposes", { :controller => "yogaflows", :action => "add_poses" })
+
+  get("/users/:user_id", { :controller => "yogaflows", :action => "show_myflows" })
 
   # UPDATE
   get("/yogaflows/:prefill_with_id/edit", { :controller => "yogaflows", :action => "edit_form" })

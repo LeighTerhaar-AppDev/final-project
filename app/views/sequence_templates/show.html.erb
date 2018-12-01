@@ -1,0 +1,58 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Sequence #<%= @sequence.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/sequences" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/sequences/<%= @sequence.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit sequence
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_sequence/<%= @sequence.id %>" class="btn btn-block btn-outline-secondary">
+          Delete sequence
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Yogaflow
+      </dt>
+      <dd>
+        <%= @sequence.yogaflow_id %>
+      </dd>
+
+      <dt>
+        Pose
+      </dt>
+      <dd>
+        <%= @sequence.pose_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@sequence.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@sequence.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
