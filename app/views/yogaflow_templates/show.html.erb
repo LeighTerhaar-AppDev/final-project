@@ -67,64 +67,60 @@
 
 
 <div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
+  <div class="col-12">
     <div class="text-center">
     <h2>Poses</h2>
     </div>
+    <% @sequences.each do |sequence| %>
     <dl>
-      <% @sequences.each do |sequence| %>
       <dt>
-        Pose Name
-      </dt>
-      <dd>
         <%= sequence.pose.name %>
-        
-      </dd>
-
-      <dt>
-        Sanskrit Pose Name
       </dt>
       <dd>
         <%= sequence.pose.sanskrit %>
       </dd>
 
       <dt>
-        Picture
       </dt>
       <dd>
         <%= sequence.pose.picture %>
       </dd>
-      <% end %>
+
     </dl>
+    <% end %>
   </div>
+</div>
+
+
   
   <div class="card-header">
     Add a pose to this yoga flow
   </div>
-  <ul class="list-group">
-    <li class="list-group-item">
-      <form action="/create_sequence" >
-        <!-- Label and input for yoga flow id-->
-        <div class="form-group">
-          
-          <input type="hidden" name="yogaflow_id" class="form-control" value ="<%= yogaflow.id %>">
+
+<form action="/create_sequence" method="post">
+
+  <div class="form-group">
+    <input type="hidden" name="yogaflow_id" class="form-control" value="<%= @yogaflow.id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="pose_id">
+      Pose
+    </label>
+    
+    <%= select_tag("pose_id", options_from_collection_for_select(Pose.all, :id, :name), :class => "form-control") %>
+
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Add the pose
+  </button>
+
+
+
+        <div>
+          <a href="/poses">View all poses</a>
         </div>
-
-        <!-- Label and input for pose_id -->
-        <div class="form-group">
-          <label for="pose_id">
-            Pose
-          </label>
-
-          <%= select_tag("pose_id", options_from_collection_for_select(Pose.all, :id, :name), :class => "form-control") %>
-        </div>
-        
-        <!-- Label and input for sequence_id -->
-        <input type="hidden" name="sequence_id" value="<%= @sequence.id %>">
-
-        <button class="btn btn-block btn-outline-secondary">
-          Add Pose
-        </button>
       </form>
     </li>
   </ul>

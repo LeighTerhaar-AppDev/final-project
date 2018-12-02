@@ -1,113 +1,17 @@
-<div class="card-columns">
+<div>
   <% @yogaflows.each do |yogaflow| %>
-  <div class="card">
+  <div class="card mb-3">
+    <div class="card-header">
+      <a href="users/<%= yogaflow.user.id %>"><%= yogaflow.user.username %></a>
+    </div>
     <div class="card-body">
       <h5 class="card-title"><%= yogaflow.title %></h5>
-      <p class="card-text"><%= yogaflow.description %></p>
-      <p class="card-text"><small class="text-muted"><%= time_ago_in_words(yogaflow.created_at) %>ago. </small></p>
+      <p class="card-text">Intention: <%= yogaflow.intention %></p>
+      <p class="card-text">Description: <%= yogaflow.description %></p>
+      <p class="card-text"><small class="text-muted">Created <%= time_ago_in_words(yogaflow.created_at) %> ago. </small></p>
     </div>
   </div>
   <% end %>
 </div>
 
 
-
-<!--what was here already-->
-<div class="row mb-3">
-  <div class="col-md-12">
-    <h1>
-      All yogaflows
-    </h1>
-
-    <a href="/yogaflows/new" class="btn btn-block btn-outline-secondary">
-      Add a new yogaflow
-    </a>
-  </div>
-</div>
-
-
-<hr>
-
-<div class="row mb-3">
-  <div class="col-md-12">
-    <table class="table">
-      <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
-          Title
-        </th>
-
-        <th>
-          Intention
-        </th>
-
-        <th>
-          Description
-        </th>
-
-        <th>
-          Yogatype
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @yogaflows.each do |yogaflow| %>
-      <tr>
-        <td>
-          <%= yogaflow.id %>
-        </td>
-
-        <td>
-          <%= yogaflow.user_id %>
-        </td>
-
-        <td>
-          <%= yogaflow.title %>
-        </td>
-
-        <td>
-          <%= yogaflow.intention %>
-        </td>
-
-        <td>
-          <%= yogaflow.description %>
-        </td>
-
-        <td>
-          <%= yogaflow.yogatype %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(yogaflow.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(yogaflow.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/yogaflows/<%= yogaflow.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>

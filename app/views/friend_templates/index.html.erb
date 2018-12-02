@@ -18,48 +18,33 @@
     <table class="table">
       <tr>
         <th>
-          ID
+          Name
         </th>
 
         <th>
-          Follower
+          Profile
         </th>
 
         <th>
-          Leader
+           Picture
         </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
+        
         <th>
         </th>
       </tr>
 
-      <% @friends.each do |friend| %>
+    <% @friends.where(follower_id: current_user.id).each do |friend| %>
       <tr>
         <td>
-          <%= friend.id %>
+          <%= friend.leader_id.username %>
         </td>
 
         <td>
-          <%= friend.follower_id %>
+          <%= friend.leader_id.profile %>
         </td>
 
         <td>
-          <%= friend.leader_id %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(friend.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(friend.updated_at) %> ago
+          <%= friend.leader_id.profilepic %>
         </td>
 
         <td>

@@ -18,8 +18,11 @@
             <a href="/" class="dropdown-item">
               Homepage
             </a>
+            <a href="/yogaflows" class="dropdown-item">
+              All flows
+            </a>
             <a href="/yogaflows/new" class="dropdown-item">
-              Create new yoga flow
+              Create a new yoga flow
             </a>
 
             <% if current_user.blank? %>
@@ -31,6 +34,15 @@
                My yoga flows
             </a>
             <% end %>
+            <a href="/friends" class="dropdown-item">
+              My friends
+            </a>
+            <a href="/friends/flows" class="dropdown-item">
+              Favorite flows
+            </a>
+            <a href="/users/<%= current_user.id %>/profile" class="dropdown-item">
+              My profile
+            </a>
           </div>
         </li>
       </ul>

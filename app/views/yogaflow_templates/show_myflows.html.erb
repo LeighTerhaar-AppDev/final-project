@@ -4,33 +4,41 @@
   </div>
 </div> 
 
-<div class="card w-75"> 
-        <ul class="list-group">
-        <% @yogaflow.each do |yogaflow| %>
-          <li class="list-group-item">
-            <div class="card-header">
-                <a href="/yogaflows/<%= current_user.id %>">
-                    <%= current_user.username %>
+<div>
+    <% @yogaflow.each do |yogaflow| %>
+    <div class="card mb-3">
+        <div class="card-header">
+            <h5>
+                <a href="/yogaflows/<%= yogaflow.id %>"><%= yogaflow.title %>
                 </a>
-                    <%= time_ago_in_words(yogaflow.created_at) %> ago
+            </h5>
+        </div>
+        <ul class="list-group">
+            <div class="card-body">
+                <h6 class="card-title">
+                    Intention
+                </h6>
+                <p>
+                    <%= yogaflow.intention %>
+                </p>
+                <h6 class="card-title">
+                    <div>Description</div>
+                </h6>
+                <p>
+                    <%= yogaflow.description %>
+                </p>
+                
+                <h6 class="card-title">
+                    Style of Yoga
+                </h6>
+                 <p>
+                    <%= yogaflow.yogatype %>
+                </p>
+                <div class="text-muted">
+                    Created <%= time_ago_in_words(yogaflow.created_at) %> ago
+                </div>
             </div>
-          </li>
-        <div>
-            <%= yogaflow.title %>
-        </div>
-        <div>
-            <%= yogaflow.intention %>
-        </div>
-        <div>
-            <%= yogaflow.description %>
-        </div>
-         <div>
-            <%= yogaflow.yogatype %>
-        </div>
-        <div>
-            <%= yogaflow.poses.name %>
-        </div>
-
-    <% end %>
-    </ul>
+        </ul>
+</div>
+<% end %>
 </div>

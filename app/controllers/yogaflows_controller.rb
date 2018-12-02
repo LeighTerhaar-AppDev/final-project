@@ -11,6 +11,7 @@ class YogaflowsController < ApplicationController
 
   def show
     @yogaflow = Yogaflow.find(params.fetch("id_to_display"))
+    @sequences= Sequence.where(yogaflow_id: @yogaflow.id)
 
     render("yogaflow_templates/show.html.erb")
   end
@@ -18,8 +19,7 @@ class YogaflowsController < ApplicationController
   def show_myflows
     @user = User.all
     @yogaflow = Yogaflow.where(user_id: current_user.id)
-    @sequences = Sequence.where(yogaflow_id: @yogaflow.id)
-    
+
     render("yogaflow_templates/show_myflows.html.erb")
   end
 
@@ -41,9 +41,7 @@ class YogaflowsController < ApplicationController
     if @yogaflow.valid?
       @yogaflow.save
     
-    @sequence = Sequence.new.where(yogaflow_id: yogaflow.id)
-
-    redirect_to("/yogaflows/#{@yogaflow.id}/addposes", :notice => "Yogaflow created successfully. Now you can add poses!")
+    redirect_to("/poses", :notice => "Yogaflow created successfully. Now you can add poses!")
     else
       render("yogaflow_templates/new_form_with_errors.html.erb")
     end
@@ -81,18 +79,5 @@ class YogaflowsController < ApplicationController
     redirect_to("/yogaflows", :notice => "Yogaflow deleted successfully.")
   end
   
-  def add_poses
-    @yogaflow = Yogaflow.find(params.fetch("id_to_display"))
-    
-    @sequence = Sequence.new
-
-    if @sequence.valid?
-      @sequence.save
-
-      redirect_back(:fallback_location => "/yogaflows/:id_to_display/addposes", :notice => "Sequence created successfully.")
-    else
-      render("sequence_templates/new_form_with_errors.html.erb")
-    end
-  end
   
 end

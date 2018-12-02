@@ -4,9 +4,9 @@
       All poses
     </h1>
 
-    <a href="/poses/new" class="btn btn-block btn-outline-secondary">
-      Add a new pose
-    </a>
+    <!--<a href="/poses/new" class="btn btn-block btn-outline-secondary">-->
+    <!--  Add a new pose-->
+    <!--</a>-->
   </div>
 </div>
 
@@ -17,13 +17,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Yogaflow
-        </th>
 
         <th>
           Name
@@ -38,11 +31,7 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
+          Position
         </th>
 
         <th>
@@ -51,13 +40,6 @@
 
       <% @poses.each do |pose| %>
       <tr>
-        <td>
-          <%= pose.id %>
-        </td>
-
-        <td>
-          <%= pose.yogaflow_id %>
-        </td>
 
         <td>
           <%= pose.name %>
@@ -72,16 +54,24 @@
         </td>
 
         <td>
-          <%= time_ago_in_words(pose.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(pose.updated_at) %> ago
+          <%= pose.position %> 
         </td>
 
         <td>
-          <a href="/poses/<%= pose.id %>">
-            Show details
-          </a>
+          <form action="/create_sequence" method="post">
+            
+              <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add to my flow
+            </button>
+          </form>
         </td>
       </tr>
       <% end %>

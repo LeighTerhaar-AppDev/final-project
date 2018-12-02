@@ -26,7 +26,7 @@ class SequencesController < ApplicationController
     if @sequence.valid?
       @sequence.save
 
-      redirect_back(:fallback_location => "/sequences", :notice => "Sequence created successfully.")
+      redirect_back(:fallback_location => "/sequences", :notice => "Pose added successfully.")
     else
       render("sequence_templates/new_form_with_errors.html.erb")
     end

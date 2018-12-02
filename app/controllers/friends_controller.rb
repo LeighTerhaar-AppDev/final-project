@@ -4,9 +4,16 @@ class FriendsController < ApplicationController
 
     render("friend_templates/index.html.erb")
   end
-
+  
   def show
     @friend = Friend.find(params.fetch("id_to_display"))
+
+    render("friend_templates/show.html.erb")
+  end
+
+  def show_flows
+    @friend = Friend.find(params.fetch("id_to_display"))
+    @friendflows = Yogaflow.where(user_id: @friend.id)
 
     render("friend_templates/show.html.erb")
   end
