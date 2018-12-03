@@ -59,6 +59,9 @@
       <div class="card-body">
         <p class="card-text"><%= pose.sanskrit %></p>
         <p class="card-text"><%= pose.position %></p>
+        <p class="card-text"><%= pose.balancing %></p>
+        <p class="card-text"><%= pose.forwardfold %></p>
+
         <div>
         <form action="/create_sequence" method="post">
             <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
@@ -84,140 +87,7 @@
     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
   </div>
 </div>
-  
-<!--tab for cards for all poses-->
-  
-  <div class="tab-pane fade show active" id="allposes" role="tabpanel" aria-labelledby="allposes-tab">
-    <% @poses.each do |pose| %>
-    <div class="card mb-3">
-      <h5 class="card-header"><%= pose.name %></h5>
-      <div class="card-body">
-        <p class="card-text"><%= pose.sanskrit %></p>
-        <p class="card-text"><%= pose.position %></p>
-        <div>
-        <form action="/create_sequence" method="post">
-            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
-            <div class="form-group">
-              <label for="yogaflow_id">
-                Add to a Yogaflow
-              </label>
-              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
-            </div>
-            <button class="btn btn-block btn-outline-secondary">
-              Add
-            </button>
-          </form>
-          </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-  
-  
-  
-<!--tab for cards for all poses-->
-  <div class="tab-pane fade" id="balancingposes" role="tabpanel" aria-labelledby="balancingposes-tab">
-    <% @poses.where(balancing: "true").each do |pose| %>
-    <% if pose.balancing == "true" %>
-    <div class="card mb-3">
-      <h5 class="card-header"><%= pose.name %></h5>
-      <div class="card-body">
-        <p class="card-text"><%= pose.sanskrit %></p>
-        <p class="card-text"><%= pose.position %></p>
-        <div>
-        <form action="/create_sequence" method="post">
-            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
-            <div class="form-group">
-              <label for="yogaflow_id">
-                Add to a Yogaflow
-              </label>
-              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
-            </div>
-            <button class="btn btn-block btn-outline-secondary">
-              Add
-            </button>
-          </form>
-          </div>
-      </div>
-    </div>
-    <% else %>
-    <% end %>
-    <% end %>
-  </div>
-  
-  <div class="tab-pane fade" id="forwardfold" role="tabpanel" aria-labelledby="forwardfold-tab">...</div>
-</div>
 
 
 
 
-
-<!--What I had before-->
-
-<hr>
-
-<div class="row mb-3">
-  <div class="col-md-12">
-    <table class="table">
-      <tr>
-
-        <th>
-          Name
-        </th>
-
-        <th>
-          Sanskrit
-        </th>
-
-        <th>
-          Picture
-        </th>
-
-        <th>
-          Position
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @poses.each do |pose| %>
-      <tr>
-
-        <td>
-          <%= pose.name %>
-        </td>
-
-        <td>
-          <%= pose.sanskrit %>
-        </td>
-
-        <td>
-          <%= pose.picture %>
-        </td>
-
-        <td>
-          <%= pose.position %> 
-        </td>
-
-        <td>
-          <form action="/create_sequence" method="post">
-            
-              <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
-
-            <div class="form-group">
-              <label for="yogaflow_id">
-                Yogaflow
-              </label>
-              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
-            </div>
-            <button class="btn btn-block btn-outline-secondary">
-              Add to my flow
-            </button>
-          </form>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>

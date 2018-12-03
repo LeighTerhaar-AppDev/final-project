@@ -10,20 +10,20 @@
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #  position                 :string
-#  balancing                :boolean
-#  forwardfold              :boolean
-#  legstrengthening         :boolean
-#  legstretching            :boolean
-#  corestrengthening        :boolean
-#  hipstrengthening         :boolean
-#  hipopening               :boolean
-#  armshoulderstrengthening :boolean
-#  armshoulderstretching    :boolean
-#  backstrengthening        :boolean
-#  backstretching           :boolean
-#  backbending              :boolean
-#  twisting                 :boolean
-#  sidebending              :boolean
+#  balancing                :string
+#  forwardfold              :string
+#  legstrengthening         :string
+#  legstretching            :string
+#  corestrengthening        :string
+#  hipstrengthening         :string
+#  hipopening               :string
+#  armshoulderstrengthening :string
+#  armshoulderstretching    :string
+#  backstrengthening        :string
+#  backstretching           :string
+#  backbending              :string
+#  twisting                 :string
+#  sidebending              :string
 #
 
 class Pose < ApplicationRecord

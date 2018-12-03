@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202012900) do
+ActiveRecord::Schema.define(version: 20181203043912) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -78,20 +78,20 @@ ActiveRecord::Schema.define(version: 20181202012900) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "position"
-    t.boolean "balancing"
-    t.boolean "forwardfold"
-    t.boolean "legstrengthening"
-    t.boolean "legstretching"
-    t.boolean "corestrengthening"
-    t.boolean "hipstrengthening"
-    t.boolean "hipopening"
-    t.boolean "armshoulderstrengthening"
-    t.boolean "armshoulderstretching"
-    t.boolean "backstrengthening"
-    t.boolean "backstretching"
-    t.boolean "backbending"
-    t.boolean "twisting"
-    t.boolean "sidebending"
+    t.string "balancing"
+    t.string "forwardfold"
+    t.string "legstrengthening"
+    t.string "legstretching"
+    t.string "corestrengthening"
+    t.string "hipstrengthening"
+    t.string "hipopening"
+    t.string "armshoulderstrengthening"
+    t.string "armshoulderstretching"
+    t.string "backstrengthening"
+    t.string "backstretching"
+    t.string "backbending"
+    t.string "twisting"
+    t.string "sidebending"
   end
 
   create_table "sequences", force: :cascade do |t|

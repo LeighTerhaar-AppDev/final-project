@@ -3,7 +3,7 @@ namespace :slurp do
   task transactions: :environment do
     
     require "csv"
-    csv_text = File.read(Rails.root.join("lib", "csvs", "allposeswbooleandata.csv"))
+    csv_text = File.read(Rails.root.join("lib", "csvs", "allposeswbooleandatarevised.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     csv.each do |row|
       t = Pose.new
@@ -19,7 +19,7 @@ namespace :slurp do
       t.hipopening = row["hipopening"]
       t.armshoulderstrengthening = row["armshoulderstrengthening"]
       t.armshoulderstretching = row["armshoulderstretching"]
-      t.backstrengethening  = row["backstrengthening"]
+      t.backstrengthening  = row["backstrengthening"]
       t.backstretching = row["backstretching"]
       t.backbending = row["backbending"]
       t.twisting = row["twisting"]
