@@ -1,7 +1,8 @@
 <div class="row mb-3">
+  <% @friends.each do |friend| %>
   <div class="col-md-8 offset-md-2">
     <h1>
-      Friend #<%= @friend.id %> details
+      Friend #<%= friend.follower_id.user.username %> details
     </h1>
 
     <div class="row mb-3">
@@ -12,47 +13,52 @@
       </div>
 
       <div class="col">
-        <a href="/friends/<%= @friend.id %>/edit" class="btn btn-block btn-outline-secondary">
+        <a href="/friends/<%= friend.leader_id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit friend
         </a>
       </div>
 
       <div class="col">
-        <a href="/delete_friend/<%= @friend.id %>" class="btn btn-block btn-outline-secondary">
+        <a href="/delete_friend/<%= friend.leader_id %>" class="btn btn-block btn-outline-secondary">
           Delete friend
         </a>
       </div>
     </div>
 
+    <% @yogaflows.each do |yogaflow| %>
+    
     <dl>
       <dt>
-        Follower
+        Friend
       </dt>
       <dd>
-        <%= @friend.follower_id %>
+        <%= yogaflow.user.username %>
       </dd>
 
       <dt>
-        Leader
+        Yoga flows
       </dt>
       <dd>
-        <%= @friend.leader_id %>
+        <%= yogaflow.title %>
       </dd>
 
       <dt>
         Created at
       </dt>
       <dd>
-        <%= time_ago_in_words(@friend.created_at) %> ago
+        <%= time_ago_in_words(yogaflow.created_at) %> ago
       </dd>
 
       <dt>
-        Updated at
       </dt>
       <dd>
-        <%= time_ago_in_words(@friend.updated_at) %> ago
+        <a href="/yogaflows/<%= yogaflow.id %>">
+          View
+        </a>
       </dd>
     </dl>
+    <% end %>
   </div>
+  <% end %>
 </div>
 

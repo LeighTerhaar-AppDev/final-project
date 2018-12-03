@@ -15,9 +15,7 @@
             Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a href="/" class="dropdown-item">
-              Homepage
-            </a>
+
             <a href="/yogaflows" class="dropdown-item">
               All flows
             </a>
@@ -40,9 +38,15 @@
             <a href="/friends/flows" class="dropdown-item">
               Favorite flows
             </a>
+            <% if current_user.blank? %>
+            <a href="/users/<%= current_user %>" class="dropdown-item">
+            My profile
+            </a>
+            <% else %>
             <a href="/users/<%= current_user.id %>/profile" class="dropdown-item">
               My profile
             </a>
+            <% end %>
           </div>
         </li>
       </ul>

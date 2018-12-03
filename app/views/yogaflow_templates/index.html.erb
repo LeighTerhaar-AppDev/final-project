@@ -2,7 +2,7 @@
   <% @yogaflows.each do |yogaflow| %>
   <div class="card mb-3">
     <div class="card-header">
-      <a href="users/<%= yogaflow.user.id %>"><%= yogaflow.user.username %></a>
+      <a href="users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
     </div>
     <div class="card-body">
       <h5 class="card-title"><%= yogaflow.title %></h5>
