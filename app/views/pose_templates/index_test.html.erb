@@ -1,7 +1,7 @@
 <h1>test page for poses</h1>
 
 <%= search_form_for @q, { :url => "/poses/test" } do |f| %>
-  <p class="lead">Narrow results:</p>
+  <p class="lead">Search Poses:</p>
 
     <div class="form-group">
         <%= f.label :name_or_sanskrit_cont, "Search English or Sanskrit Name" %>
@@ -11,6 +11,20 @@
     <div class="form-group">
         <%= f.label :position_eq, "Type of Pose" %>
         <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <% @poses.each do |pose| %>
+      <% Balance.all.each do |balance| %>
+      <% if pose.id == balance.pose_id %>
+        <label>
+          <%= check_box_tag('q[id_eq_any][]', pose.id, (true if @q.id_eq_any.try(:include?, pose.id))) %>
+          <%= pose.name %>
+        </label>
+        <% else %>
+        <% end %>
+      <% end %>
+      <% end %>
     </div>
 
 
