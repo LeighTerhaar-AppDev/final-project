@@ -1,6 +1,6 @@
 <h1>test page for poses</h1>
 
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, { :url => "/poses/test" } do |f| %>
   <p class="lead">Narrow results:</p>
 
     <div class="form-group">
@@ -45,3 +45,5 @@
     </div>
     <% end %>
   </div>
+  
+  <%= paginate @poses %>

@@ -21,7 +21,7 @@ class PosesController < ApplicationController
   
   def index_test
     @q = Pose.ransack(params[:q])
-    @poses = @q.result(:distinct => true)
+    @poses = @q.result(:distinct => true).page(params[:page])
     @balances = Balance.all
 
     render("pose_templates/index_test.html.erb")
