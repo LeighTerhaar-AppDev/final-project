@@ -17,34 +17,34 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
             <a href="/yogaflows" class="dropdown-item">
-              All flows
+              All Yoga Flows
             </a>
             <a href="/yogaflows/new" class="dropdown-item">
-              Create a new yoga flow
+              Create A New Yoga flow
             </a>
 
             <% if current_user.blank? %>
               <a href="/users/<%= current_user %>" class="dropdown-item">
-              My yoga flows
+              My Yoga Flows
               </a>
               <% else %>
               <a href="/users/<%= current_user.id %>" class="dropdown-item">
-               My yoga flows
+               My Yoga Flows
             </a>
             <% end %>
             <a href="/friends" class="dropdown-item">
-              My friends
+              My Friends
             </a>
             <a href="/friends/flows" class="dropdown-item">
-              Favorite flows
+              Favorite Flows
             </a>
             <% if current_user.blank? %>
             <a href="/users/<%= current_user %>" class="dropdown-item">
-            My profile
+            My Profile
             </a>
             <% else %>
             <a href="/users/<%= current_user.id %>/profile" class="dropdown-item">
-              My profile
+              My Profile
             </a>
             <% end %>
           </div>

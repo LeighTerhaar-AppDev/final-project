@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181203043912) do
+ActiveRecord::Schema.define(version: 20181204005852) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,17 +43,53 @@ ActiveRecord::Schema.define(version: 20181203043912) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "balances", force: :cascade do |t|
+  create_table "armshoulderstrengthenings", force: :cascade do |t|
     t.integer "pose_id"
+    t.text "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "balancingposes", force: :cascade do |t|
+  create_table "armshoulderstretchings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "backbendings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "backstrengthenings", force: :cascade do |t|
     t.integer "pose_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type"
+    t.text "area"
+  end
+
+  create_table "backstretchings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "balances", force: :cascade do |t|
+    t.integer "pose_id"
+    t.string "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "corestrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -63,9 +99,44 @@ ActiveRecord::Schema.define(version: 20181203043912) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "forwardfolds", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friends", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "leader_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hipopenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hipstrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "legstrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "legstretchings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,25 +149,25 @@ ActiveRecord::Schema.define(version: 20181203043912) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "position"
-    t.string "balancing"
-    t.string "forwardfold"
-    t.string "legstrengthening"
-    t.string "legstretching"
-    t.string "corestrengthening"
-    t.string "hipstrengthening"
-    t.string "hipopening"
-    t.string "armshoulderstrengthening"
-    t.string "armshoulderstretching"
-    t.string "backstrengthening"
-    t.string "backstretching"
-    t.string "backbending"
-    t.string "twisting"
-    t.string "sidebending"
   end
 
   create_table "sequences", force: :cascade do |t|
     t.integer "yogaflow_id"
     t.integer "pose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sidebendings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "twistings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.text "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

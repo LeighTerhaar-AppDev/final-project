@@ -1,8 +1,30 @@
 class PosesController < ApplicationController
   def index
     @poses = Pose.all
+    @balances = Balance.all
+    @forwardfolds = Forwardfold.all
+    @armshoulderstrengthenings= Armshoulderstrengthening.all
+    @armshoulderstretchings = Armshoulderstretching.all
+    @backbendings = Backbending.all
+    @backstrengthenings = Backstrengthening.all
+    @backstretchings = Backstretching.all
+    @corestrengthenings = Corestrengthening.all
+    @hipopenings = Hipopening.all
+    @hipstrengthenings = Hipstrengthening.all
+    @legstrengthenings = Legstrengthening.all
+    @legstretchings = Legstretching.all
+    @sidebendings = Sidebending.all
+    @twistings = Twisting.all
 
     render("pose_templates/index.html.erb")
+  end
+  
+  def index_test
+    @q = Pose.ransack(params[:q])
+    @poses = @q.result(:distinct => true)
+    @balances = Balance.all
+
+    render("pose_templates/index_test.html.erb")
   end
 
   def show

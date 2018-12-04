@@ -70,6 +70,7 @@ Rails.application.routes.draw do
 
   # READ
   get("/poses", { :controller => "poses", :action => "index" })
+  get("/poses/test", { :controller => "poses", :action => "index_test" })
   get("/poses/:id_to_display", { :controller => "poses", :action => "show" })
 
   # UPDATE
