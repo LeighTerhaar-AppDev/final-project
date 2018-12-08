@@ -50,8 +50,6 @@ class Pose < ApplicationRecord
     has_many :sidebendingareas, :through => :sidebendings, :source => :area
     has_many :twistingareas, :through => :twistings, :source => :area
 
-
-
     validates :name, presence: true
     validates :sanskrit, presence: true
     validates :position, presence: true
