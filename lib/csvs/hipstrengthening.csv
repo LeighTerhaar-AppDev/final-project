@@ -1,60 +1,60 @@
-﻿id,pose_id,area
-1,2,Hip Strengthening
-2,5,Hip Strengthening
-3,6,Hip Strengthening
-4,31,Hip Strengthening
-5,32,Hip Strengthening
-6,33,Hip Strengthening
-7,34,Hip Strengthening
-8,35,Hip Strengthening
-9,36,Hip Strengthening
-10,37,Hip Strengthening
-11,38,Hip Strengthening
-12,39,Hip Strengthening
-13,40,Hip Strengthening
-14,41,Hip Strengthening
-15,42,Hip Strengthening
-16,43,Hip Strengthening
-17,44,Hip Strengthening
-18,45,Hip Strengthening
-19,58,Hip Strengthening
-20,59,Hip Strengthening
-21,60,Hip Strengthening
-22,67,Hip Strengthening
-23,75,Hip Strengthening
-24,77,Hip Strengthening
-25,78,Hip Strengthening
-26,79,Hip Strengthening
-27,82,Hip Strengthening
-28,101,Hip Strengthening
-29,102,Hip Strengthening
-30,105,Hip Strengthening
-31,106,Hip Strengthening
-32,107,Hip Strengthening
-33,108,Hip Strengthening
-34,109,Hip Strengthening
-35,110,Hip Strengthening
-36,111,Hip Strengthening
-37,112,Hip Strengthening
-38,118,Hip Strengthening
-39,130,Hip Strengthening
-40,135,Hip Strengthening
-41,136,Hip Strengthening
-42,137,Hip Strengthening
-43,138,Hip Strengthening
-44,144,Hip Strengthening
-45,154,Hip Strengthening
-46,155,Hip Strengthening
-47,156,Hip Strengthening
-48,158,Hip Strengthening
-49,159,Hip Strengthening
-50,160,Hip Strengthening
-51,161,Hip Strengthening
-52,162,Hip Strengthening
-53,163,Hip Strengthening
-54,164,Hip Strengthening
-55,165,Hip Strengthening
-56,166,Hip Strengthening
-57,169,Hip Strengthening
-58,170,Hip Strengthening
-59,172,Hip Strengthening
+﻿id,pose_id,area_id
+1,2,10
+2,5,10
+3,6,10
+4,31,10
+5,32,10
+6,33,10
+7,34,10
+8,35,10
+9,36,10
+10,37,10
+11,38,10
+12,39,10
+13,40,10
+14,41,10
+15,42,10
+16,43,10
+17,44,10
+18,45,10
+19,58,10
+20,59,10
+21,60,10
+22,67,10
+23,75,10
+24,77,10
+25,78,10
+26,79,10
+27,82,10
+28,101,10
+29,102,10
+30,105,10
+31,106,10
+32,107,10
+33,108,10
+34,109,10
+35,110,10
+36,111,10
+37,112,10
+38,118,10
+39,130,10
+40,135,10
+41,136,10
+42,137,10
+43,138,10
+44,144,10
+45,154,10
+46,155,10
+47,156,10
+48,158,10
+49,159,10
+50,160,10
+51,161,10
+52,162,10
+53,163,10
+54,164,10
+55,165,10
+56,166,10
+57,169,10
+58,170,10
+59,172,10

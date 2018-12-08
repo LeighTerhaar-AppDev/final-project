@@ -1,79 +1,79 @@
-﻿id,pose_id,area
-1,4,Arm and Shoulder Stretching
-2,7,Arm and Shoulder Stretching
-3,8,Arm and Shoulder Stretching
-4,9,Arm and Shoulder Stretching
-5,10,Arm and Shoulder Stretching
-6,12,Arm and Shoulder Stretching
-7,20,Arm and Shoulder Stretching
-8,22,Arm and Shoulder Stretching
-9,24,Arm and Shoulder Stretching
-10,25,Arm and Shoulder Stretching
-11,26,Arm and Shoulder Stretching
-12,30,Arm and Shoulder Stretching
-13,34,Arm and Shoulder Stretching
-14,35,Arm and Shoulder Stretching
-15,36,Arm and Shoulder Stretching
-16,37,Arm and Shoulder Stretching
-17,38,Arm and Shoulder Stretching
-18,39,Arm and Shoulder Stretching
-19,40,Arm and Shoulder Stretching
-20,41,Arm and Shoulder Stretching
-21,42,Arm and Shoulder Stretching
-22,43,Arm and Shoulder Stretching
-23,44,Arm and Shoulder Stretching
-24,45,Arm and Shoulder Stretching
-25,50,Arm and Shoulder Stretching
-26,51,Arm and Shoulder Stretching
-27,52,Arm and Shoulder Stretching
-28,55,Arm and Shoulder Stretching
-29,56,Arm and Shoulder Stretching
-30,57,Arm and Shoulder Stretching
-31,58,Arm and Shoulder Stretching
-32,59,Arm and Shoulder Stretching
-33,60,Arm and Shoulder Stretching
-34,61,Arm and Shoulder Stretching
-35,62,Arm and Shoulder Stretching
-36,65,Arm and Shoulder Stretching
-37,71,Arm and Shoulder Stretching
-38,72,Arm and Shoulder Stretching
-39,73,Arm and Shoulder Stretching
-40,74,Arm and Shoulder Stretching
-41,76,Arm and Shoulder Stretching
-42,79,Arm and Shoulder Stretching
-43,95,Arm and Shoulder Stretching
-44,96,Arm and Shoulder Stretching
-45,97,Arm and Shoulder Stretching
-46,101,Arm and Shoulder Stretching
-47,102,Arm and Shoulder Stretching
-48,109,Arm and Shoulder Stretching
-49,112,Arm and Shoulder Stretching
-50,113,Arm and Shoulder Stretching
-51,114,Arm and Shoulder Stretching
-52,117,Arm and Shoulder Stretching
-53,125,Arm and Shoulder Stretching
-54,128,Arm and Shoulder Stretching
-55,135,Arm and Shoulder Stretching
-56,136,Arm and Shoulder Stretching
-57,137,Arm and Shoulder Stretching
-58,138,Arm and Shoulder Stretching
-59,140,Arm and Shoulder Stretching
-60,141,Arm and Shoulder Stretching
-61,148,Arm and Shoulder Stretching
-62,149,Arm and Shoulder Stretching
-63,150,Arm and Shoulder Stretching
-64,152,Arm and Shoulder Stretching
-65,153,Arm and Shoulder Stretching
-66,155,Arm and Shoulder Stretching
-67,156,Arm and Shoulder Stretching
-68,158,Arm and Shoulder Stretching
-69,159,Arm and Shoulder Stretching
-70,162,Arm and Shoulder Stretching
-71,163,Arm and Shoulder Stretching
-72,164,Arm and Shoulder Stretching
-73,165,Arm and Shoulder Stretching
-74,166,Arm and Shoulder Stretching
-75,170,Arm and Shoulder Stretching
-76,171,Arm and Shoulder Stretching
-77,172,Arm and Shoulder Stretching
-78,173,Arm and Shoulder Stretching
+﻿id,pose_id,area_id
+1,4,2
+2,7,2
+3,8,2
+4,9,2
+5,10,2
+6,12,2
+7,20,2
+8,22,2
+9,24,2
+10,25,2
+11,26,2
+12,30,2
+13,34,2
+14,35,2
+15,36,2
+16,37,2
+17,38,2
+18,39,2
+19,40,2
+20,41,2
+21,42,2
+22,43,2
+23,44,2
+24,45,2
+25,50,2
+26,51,2
+27,52,2
+28,55,2
+29,56,2
+30,57,2
+31,58,2
+32,59,2
+33,60,2
+34,61,2
+35,62,2
+36,65,2
+37,71,2
+38,72,2
+39,73,2
+40,74,2
+41,76,2
+42,79,2
+43,95,2
+44,96,2
+45,97,2
+46,101,2
+47,102,2
+48,109,2
+49,112,2
+50,113,2
+51,114,2
+52,117,2
+53,125,2
+54,128,2
+55,135,2
+56,136,2
+57,137,2
+58,138,2
+59,140,2
+60,141,2
+61,148,2
+62,149,2
+63,150,2
+64,152,2
+65,153,2
+66,155,2
+67,156,2
+68,158,2
+69,159,2
+70,162,2
+71,163,2
+72,164,2
+73,165,2
+74,166,2
+75,170,2
+76,171,2
+77,172,2
+78,173,2

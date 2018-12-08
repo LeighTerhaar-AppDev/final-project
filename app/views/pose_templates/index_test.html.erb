@@ -12,21 +12,6 @@
         <%= f.label :position_eq, "Type of Pose" %>
         <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
     </div>
-    
-    <div class="form-group">
-      <% @poses.each do |pose| %>
-      <% Balance.all.each do |balance| %>
-      <% if pose.id == balance.pose_id %>
-        <label>
-          <%= check_box_tag('q[id_eq_any][]', pose.id, (true if @q.id_eq_any.try(:include?, pose.id))) %>
-          <%= pose.name %>
-        </label>
-        <% else %>
-        <% end %>
-      <% end %>
-      <% end %>
-    </div>
-
 
   <%= f.submit :class => "btn btn-primary btn-block" %>
   
@@ -41,6 +26,7 @@
       <div class="card-body">
         <p class="card-text"><%= pose.sanskrit %></p>
         <p class="card-text"><%= pose.position %></p>
+
         <div>
         <form action="/create_sequence" method="post">
             <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">

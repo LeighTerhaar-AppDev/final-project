@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181204005852) do
+ActiveRecord::Schema.define(version: 20181205004500) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,23 +43,29 @@ ActiveRecord::Schema.define(version: 20181204005852) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "areas", force: :cascade do |t|
+    t.text "areaname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "armshoulderstrengthenings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "armshoulderstretchings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "backbendings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,26 +74,26 @@ ActiveRecord::Schema.define(version: 20181204005852) do
     t.integer "pose_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "area"
+    t.integer "area_id"
   end
 
   create_table "backstretchings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "balances", force: :cascade do |t|
     t.integer "pose_id"
-    t.string "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "corestrengthenings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -101,7 +107,7 @@ ActiveRecord::Schema.define(version: 20181204005852) do
 
   create_table "forwardfolds", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -115,28 +121,28 @@ ActiveRecord::Schema.define(version: 20181204005852) do
 
   create_table "hipopenings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "hipstrengthenings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "legstrengthenings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "legstretchings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -160,14 +166,14 @@ ActiveRecord::Schema.define(version: 20181204005852) do
 
   create_table "sidebendings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "twistings", force: :cascade do |t|
     t.integer "pose_id"
-    t.text "area"
+    t.integer "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

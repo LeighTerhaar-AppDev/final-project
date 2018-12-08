@@ -1,13 +1,13 @@
-﻿id,pose_id,area
-1,19,Forward Fold
-2,24,Forward Fold
-3,25,Forward Fold
-4,71,Forward Fold
-5,72,Forward Fold
-6,73,Forward Fold
-7,76,Forward Fold
-8,80,Forward Fold
-9,88,Forward Fold
-10,126,Forward Fold
-11,127,Forward Fold
-12,128,Forward Fold
+﻿id,pose_id,area_id
+1,19,8
+2,24,8
+3,25,8
+4,71,8
+5,72,8
+6,73,8
+7,76,8
+8,80,8
+9,88,8
+10,126,8
+11,127,8
+12,128,8

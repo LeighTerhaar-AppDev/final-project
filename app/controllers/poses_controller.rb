@@ -21,7 +21,9 @@ class PosesController < ApplicationController
   
   def index_test
     @q = Pose.ransack(params[:q])
-    @poses = @q.result(:distinct => true).page(params[:page])
+    @poses = @q.result(:distinct => true).includes(:armshoulderstrengtheningareas, :armshoulderstrengthenings, :armshoulderstretchingareas, :armshoulderstretchings, :backbendingareas, :backbendings, :backstrengtheningareas, :backstrengthenings, :backstretchingareas, :backstretchings, :balanceareas, :balances, :corestrengtheningareas, :corestrengthenings, :forwardfoldareas, :forwardfolds, :hipopeningareas, :hipopenings, :hipstrengtheningareas, :hipstrengthenings, :legstrengtheningareas, :legstrengthenings, :legstretchingareas, :legstretchings, :sidebendingareas, :sidebendings, :twistingareas, :twistings).page(params[:page])
+    
+    
 
     render("pose_templates/index_test.html.erb")
   end

@@ -1,108 +1,108 @@
-﻿id,pose_id,area
-1,1,Core Strengthening
-2,5,Core Strengthening
-3,6,Core Strengthening
-4,11,Core Strengthening
-5,12,Core Strengthening
-6,20,Core Strengthening
-7,21,Core Strengthening
-8,22,Core Strengthening
-9,23,Core Strengthening
-10,31,Core Strengthening
-11,32,Core Strengthening
-12,33,Core Strengthening
-13,34,Core Strengthening
-14,35,Core Strengthening
-15,36,Core Strengthening
-16,37,Core Strengthening
-17,38,Core Strengthening
-18,39,Core Strengthening
-19,40,Core Strengthening
-20,41,Core Strengthening
-21,42,Core Strengthening
-22,43,Core Strengthening
-23,44,Core Strengthening
-24,45,Core Strengthening
-25,46,Core Strengthening
-26,47,Core Strengthening
-27,48,Core Strengthening
-28,49,Core Strengthening
-29,51,Core Strengthening
-30,52,Core Strengthening
-31,53,Core Strengthening
-32,54,Core Strengthening
-33,57,Core Strengthening
-34,58,Core Strengthening
-35,59,Core Strengthening
-36,60,Core Strengthening
-37,61,Core Strengthening
-38,62,Core Strengthening
-39,64,Core Strengthening
-40,67,Core Strengthening
-41,68,Core Strengthening
-42,69,Core Strengthening
-43,70,Core Strengthening
-44,75,Core Strengthening
-45,77,Core Strengthening
-46,78,Core Strengthening
-47,79,Core Strengthening
-48,80,Core Strengthening
-49,81,Core Strengthening
-50,82,Core Strengthening
-51,85,Core Strengthening
-52,86,Core Strengthening
-53,88,Core Strengthening
-54,89,Core Strengthening
-55,90,Core Strengthening
-56,91,Core Strengthening
-57,92,Core Strengthening
-58,98,Core Strengthening
-59,99,Core Strengthening
-60,100,Core Strengthening
-61,101,Core Strengthening
-62,102,Core Strengthening
-63,109,Core Strengthening
-64,115,Core Strengthening
-65,116,Core Strengthening
-66,118,Core Strengthening
-67,120,Core Strengthening
-68,121,Core Strengthening
-69,122,Core Strengthening
-70,123,Core Strengthening
-71,124,Core Strengthening
-72,128,Core Strengthening
-73,131,Core Strengthening
-74,132,Core Strengthening
-75,133,Core Strengthening
-76,134,Core Strengthening
-77,135,Core Strengthening
-78,136,Core Strengthening
-79,137,Core Strengthening
-80,138,Core Strengthening
-81,144,Core Strengthening
-82,145,Core Strengthening
-83,146,Core Strengthening
-84,147,Core Strengthening
-85,148,Core Strengthening
-86,151,Core Strengthening
-87,153,Core Strengthening
-88,154,Core Strengthening
-89,155,Core Strengthening
-90,156,Core Strengthening
-91,157,Core Strengthening
-92,158,Core Strengthening
-93,159,Core Strengthening
-94,160,Core Strengthening
-95,161,Core Strengthening
-96,162,Core Strengthening
-97,163,Core Strengthening
-98,164,Core Strengthening
-99,165,Core Strengthening
-100,166,Core Strengthening
-101,167,Core Strengthening
-102,168,Core Strengthening
-103,169,Core Strengthening
-104,170,Core Strengthening
-105,171,Core Strengthening
-106,172,Core Strengthening
-107,173,Core Strengthening
+﻿id,pose_id,area_id
+1,1,7
+2,5,7
+3,6,7
+4,11,7
+5,12,7
+6,20,7
+7,21,7
+8,22,7
+9,23,7
+10,31,7
+11,32,7
+12,33,7
+13,34,7
+14,35,7
+15,36,7
+16,37,7
+17,38,7
+18,39,7
+19,40,7
+20,41,7
+21,42,7
+22,43,7
+23,44,7
+24,45,7
+25,46,7
+26,47,7
+27,48,7
+28,49,7
+29,51,7
+30,52,7
+31,53,7
+32,54,7
+33,57,7
+34,58,7
+35,59,7
+36,60,7
+37,61,7
+38,62,7
+39,64,7
+40,67,7
+41,68,7
+42,69,7
+43,70,7
+44,75,7
+45,77,7
+46,78,7
+47,79,7
+48,80,7
+49,81,7
+50,82,7
+51,85,7
+52,86,7
+53,88,7
+54,89,7
+55,90,7
+56,91,7
+57,92,7
+58,98,7
+59,99,7
+60,100,7
+61,101,7
+62,102,7
+63,109,7
+64,115,7
+65,116,7
+66,118,7
+67,120,7
+68,121,7
+69,122,7
+70,123,7
+71,124,7
+72,128,7
+73,131,7
+74,132,7
+75,133,7
+76,134,7
+77,135,7
+78,136,7
+79,137,7
+80,138,7
+81,144,7
+82,145,7
+83,146,7
+84,147,7
+85,148,7
+86,151,7
+87,153,7
+88,154,7
+89,155,7
+90,156,7
+91,157,7
+92,158,7
+93,159,7
+94,160,7
+95,161,7
+96,162,7
+97,163,7
+98,164,7
+99,165,7
+100,166,7
+101,167,7
+102,168,7
+103,169,7
+104,170,7
+105,171,7
+106,172,7
+107,173,7

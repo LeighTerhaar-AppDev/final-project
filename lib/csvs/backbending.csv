@@ -1,28 +1,28 @@
-﻿id,pose_id,area
-1,9,Back Bending
-2,10,Back Bending
-3,15,Back Bending
-4,16,Back Bending
-5,17,Back Bending
-6,26,Back Bending
-7,29,Back Bending
-8,38,Back Bending
-9,65,Back Bending
-10,68,Back Bending
-11,78,Back Bending
-12,96,Back Bending
-13,97,Back Bending
-14,99,Back Bending
-15,101,Back Bending
-16,102,Back Bending
-17,117,Back Bending
-18,124,Back Bending
-19,131,Back Bending
-20,132,Back Bending
-21,140,Back Bending
-22,150,Back Bending
-23,152,Back Bending
-24,157,Back Bending
-25,164,Back Bending
-26,165,Back Bending
-27,166,Back Bending
+﻿id,pose_id,area_id
+1,9,3
+2,10,3
+3,15,3
+4,16,3
+5,17,3
+6,26,3
+7,29,3
+8,38,3
+9,65,3
+10,68,3
+11,78,3
+12,96,3
+13,97,3
+14,99,3
+15,101,3
+16,102,3
+17,117,3
+18,124,3
+19,131,3
+20,132,3
+21,140,3
+22,150,3
+23,152,3
+24,157,3
+25,164,3
+26,165,3
+27,166,3

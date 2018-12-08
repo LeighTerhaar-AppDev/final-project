@@ -1,72 +1,72 @@
-﻿id,pose_id,area
-1,9,Back Stretching
-2,10,Back Stretching
-3,12,Back Stretching
-4,13,Back Stretching
-5,15,Back Stretching
-6,16,Back Stretching
-7,18,Back Stretching
-8,22,Back Stretching
-9,24,Back Stretching
-10,25,Back Stretching
-11,34,Back Stretching
-12,35,Back Stretching
-13,36,Back Stretching
-14,37,Back Stretching
-15,38,Back Stretching
-16,47,Back Stretching
-17,48,Back Stretching
-18,50,Back Stretching
-19,65,Back Stretching
-20,68,Back Stretching
-21,71,Back Stretching
-22,72,Back Stretching
-23,73,Back Stretching
-24,75,Back Stretching
-25,76,Back Stretching
-26,77,Back Stretching
-27,78,Back Stretching
-28,79,Back Stretching
-29,80,Back Stretching
-30,82,Back Stretching
-31,87,Back Stretching
-32,88,Back Stretching
-33,95,Back Stretching
-34,96,Back Stretching
-35,97,Back Stretching
-36,99,Back Stretching
-37,101,Back Stretching
-38,102,Back Stretching
-39,116,Back Stretching
-40,117,Back Stretching
-41,125,Back Stretching
-42,126,Back Stretching
-43,127,Back Stretching
-44,128,Back Stretching
-45,129,Back Stretching
-46,131,Back Stretching
-47,132,Back Stretching
-48,133,Back Stretching
-49,134,Back Stretching
-50,135,Back Stretching
-51,136,Back Stretching
-52,137,Back Stretching
-53,138,Back Stretching
-54,139,Back Stretching
-55,141,Back Stretching
-56,145,Back Stretching
-57,146,Back Stretching
-58,147,Back Stretching
-59,148,Back Stretching
-60,150,Back Stretching
-61,158,Back Stretching
-62,159,Back Stretching
-63,164,Back Stretching
-64,165,Back Stretching
-65,166,Back Stretching
-66,167,Back Stretching
-67,168,Back Stretching
-68,169,Back Stretching
-69,170,Back Stretching
-70,171,Back Stretching
-71,173,Back Stretching
+﻿id,pose_id,area_id
+1,9,5
+2,10,5
+3,12,5
+4,13,5
+5,15,5
+6,16,5
+7,18,5
+8,22,5
+9,24,5
+10,25,5
+11,34,5
+12,35,5
+13,36,5
+14,37,5
+15,38,5
+16,47,5
+17,48,5
+18,50,5
+19,65,5
+20,68,5
+21,71,5
+22,72,5
+23,73,5
+24,75,5
+25,76,5
+26,77,5
+27,78,5
+28,79,5
+29,80,5
+30,82,5
+31,87,5
+32,88,5
+33,95,5
+34,96,5
+35,97,5
+36,99,5
+37,101,5
+38,102,5
+39,116,5
+40,117,5
+41,125,5
+42,126,5
+43,127,5
+44,128,5
+45,129,5
+46,131,5
+47,132,5
+48,133,5
+49,134,5
+50,135,5
+51,136,5
+52,137,5
+53,138,5
+54,139,5
+55,141,5
+56,145,5
+57,146,5
+58,147,5
+59,148,5
+60,150,5
+61,158,5
+62,159,5
+63,164,5
+64,165,5
+65,166,5
+66,167,5
+67,168,5
+68,169,5
+69,170,5
+70,171,5
+71,173,5
