@@ -5,7 +5,9 @@
       <a href="users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
     </div>
     <div class="card-body">
-      <h5 class="card-title"><%= yogaflow.title %></h5>
+      <a href="yogaflows/<%= yogaflow.id %>">
+        <h5 class="card-title"><%= yogaflow.title %></h5>
+      </a>
       <p class="card-text">Intention: <%= yogaflow.intention %></p>
       <p class="card-text">Description: <%= yogaflow.description %></p>
       <p class="card-text"><small class="text-muted">Created <%= time_ago_in_words(yogaflow.created_at) %> ago. </small></p>

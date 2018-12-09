@@ -25,7 +25,7 @@ class PosesController < ApplicationController
     
     
 
-    render("pose_templates/index_test.html.erb")
+    render("pose_templates/index.html.erb")
   end
 
   def show

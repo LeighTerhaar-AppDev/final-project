@@ -1,3 +1,48 @@
+<div>
+<div>
+<% if @user.id == current_user.id %>
+<a href="/yogaflows/new">Create a new flow</a>
+</div>
+<% else %>
+<div> 
+    <% @user.username %>
+     <div>
+        <% if @user.studentfriends.present?%>
+          <% @user.studentfriends.each do |friend| %>
+    
+          <% if friend.follower_id == current_user.id %>
+            <a href="/delete_friend/<%= friend.id %>" class="btn btn-link">
+                Unfollow
+            </a>
+         <% else %> 
+        </a>
+        
+        <form action="/create_friend" method="post">
+        <input type="hidden" name="leader_id" value="<%= @user.id %>" >
+          <input type="hidden" name="follower_id" value="<%= current_user.id %>" >
+          <button>
+          Add Friend
+          </button>
+        </form>
+  
+    
+          <% end %>
+        <% end %>
+        
+        <% else %>
+        <form action="/create_friend" method="post">
+        <input type="hidden" name="leader_id" value="<%= @user.id %>" >
+          <input type="hidden" name="follower_id" value="<%= current_user.id %>" >
+          <button>
+          Unfollow
+          </button>
+        </form>
+      <% end %>
+      </div>
+  </div>
+<% end %>
+</div>
+
 <div class="card w-75">
   <div class="card-header">
     <%= @user.username %>
@@ -37,8 +82,41 @@
                 <div class="text-muted">
                     Created <%= time_ago_in_words(yogaflow.created_at) %> ago
                 </div>
+                
+                 <!--for the likes button -->
+                    <div> 
+                      <div>
+                        <% if yogaflow.favorites.present?%>
+                          <% yogaflow.favorites.each do |favorite| %>
+                          <% if favorite.user_id == current_user.id %>
+                            <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
+                                Unlike
+                            </a>
+                         <% else %> 
+                        </a>
+                        <form action="/create_favorite" method="post">
+                        <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
+                          <input type="hidden" name="user_id" value="<%= yogaflow.user.id %>" >
+                          <button>
+                          Like
+                          </button>
+                        </form>
+             
+                          <% end %>
+                        <% end %>
+                            <% else %>
+                                <form action="/create_favorite" method="post">
+                                <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
+                                  <input type="hidden" name="user_id" value="<%= yogaflow.user.id %>" >
+                                  <button>
+                                  Like
+                                  </button>
+                                </form>
+                        <% end %>
+                      </div>
+                    </div>
             </div>
         </ul>
-</div>
-<% end %>
+    </div>
+    <% end %>
 </div>

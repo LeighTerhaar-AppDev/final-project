@@ -14,5 +14,6 @@ class Favorite < ApplicationRecord
     belongs_to :yogaflow
 
     validates :yogaflow_id, presence: true
-    validates :user_id, presence: true
+    validates :user_id, presence: true, uniqueness: {
+    scope: :yogaflow_id}
 end

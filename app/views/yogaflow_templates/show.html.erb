@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      Yogaflow #<%= @yogaflow.id %> details
+      <%= @yogaflow.title %>
     </h1>
 
     <div class="row mb-3">
@@ -27,13 +27,6 @@
     <dl>
 
       <dt>
-        Title
-      </dt>
-      <dd>
-        <%= @yogaflow.title %>
-      </dd>
-
-      <dt>
         Intention
       </dt>
       <dd>
@@ -48,7 +41,7 @@
       </dd>
 
       <dt>
-        Yogatype
+        Style of Yoga
       </dt>
       <dd>
         <%= @yogaflow.yogatype %>
