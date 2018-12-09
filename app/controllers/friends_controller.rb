@@ -1,6 +1,7 @@
 class FriendsController < ApplicationController
   def index
     @friends = Friend.all
+    @users = User.all
 
     render("friend_templates/index.html.erb")
   end
@@ -9,13 +10,6 @@ class FriendsController < ApplicationController
     @friends = Friend.find(params.fetch("id_to_display"))
 
     render("friend_templates/show.html.erb")
-  end
-
-  def show_flows
-    @friends = Friend.where(follower_id: current_user.id)
-    @yogaflows = Yogaflow.all
-    
-    render("friend_templates/show_flows.html.erb")
   end
 
   def new_form

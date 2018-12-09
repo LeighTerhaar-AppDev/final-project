@@ -10,6 +10,7 @@
           Go back
         </a>
       </div>
+<% if @yogaflow.user_id == current_user.id %>
 
       <div class="col">
         <a href="/yogaflows/<%= @yogaflow.id %>/edit" class="btn btn-block btn-outline-secondary">
@@ -22,6 +23,13 @@
           Delete yogaflow
         </a>
       </div>
+    <% else %>
+      <div class="col">
+        <a href="/users/<%= @yogaflow.user_id %>" class="btn btn-block btn-outline-secondary">
+          View All of <%= @yogaflow.user.username %>'s Flows
+        </a>
+      </div>
+    <% end %>
     </div>
 
     <dl>
@@ -85,7 +93,8 @@
 </div>
 
 
-  
+<% if @yogaflow.user_id == current_user.id %>
+
   <div class="card-header">
     Add a pose to this yoga flow
   </div>
@@ -117,4 +126,43 @@
       </form>
     </li>
   </ul>
+  
+<% else %>
+<div class="mb-3">
+   <!--for the likes button -->
+    <div> 
+      <div>
+        <% if @yogaflow.favorites.present? %>
+          <% @yogaflow.favorites.each do |favorite| %>
+          <% if favorite.user_id == current_user.id %>
+            <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
+                Unlike
+            </a>
+         <% else %> 
+   
+        <form action="/create_favorite" method="post">
+        <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>" >
+          <input type="hidden" name="user_id" value="<%= @yogaflow.user.id %>" >
+          <button>
+          Like
+          </button>
+        </form>
+
+          <% end %>
+        <% end %>
+            <% else %>
+                <form action="/create_favorite" method="post">
+                <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>" >
+                  <input type="hidden" name="user_id" value="<%= current_user.id %>" >
+                  <button>
+                  Like 2
+                  </button>
+                </form>
+        <% end %>
+      </div>
+    </div>
+  
+  
+</div>
+<% end %>
 

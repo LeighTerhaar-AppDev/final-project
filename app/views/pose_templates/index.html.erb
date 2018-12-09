@@ -1,25 +1,66 @@
-<h1>test page for poses</h1>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      Poses
+    </h1>
 
-<%= search_form_for @q, { :url => "/poses" } do |f| %>
-  <p class="lead">Search Poses:</p>
-
-    <div class="form-group">
-        <%= f.label :name_or_sanskrit_cont, "Search English or Sanskrit Name" %>
-        <%= f.text_field :name_or_sanskrit_cont, :class => "form-control" %>
-    </div>
-    
-    <div class="form-group">
-        <%= f.label :position_eq, "Position of Pose" %>
-        <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
-    </div>
-
-  <%= f.submit :class => "btn btn-primary btn-block" %>
-  
-  <a href="/poses/test" class="btn btn-default btn-block">Clear filters</a>
-<% end %>
+    <!--<a href="/poses/new" class="btn btn-block btn-outline-secondary">-->
+    <!--  Add a new pose-->
+    <!--</a>-->
+  </div>
+</div>
 
 
-<div class="card-columns">
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#allposes" role="button" aria-expanded="false" aria-controls="allposes">
+    All Poses
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#balancing" role="button" aria-expanded="false" aria-controls="balancing">
+    Balancing
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#forwardfold" role="button" aria-expanded="false" aria-controls="forwardfold">
+    Forward Folds
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#armshoulderstrengthening" role="button" aria-expanded="false" aria-controls="armshoulderstrengthening">
+    Arm and Shoulder Strengthening
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#armshoulderstretching" role="button" aria-expanded="false" aria-controls="armshoulderstretching">
+    Arm and Shoulder Stretching
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#backbending" role="button" aria-expanded="false" aria-controls="backbending">
+    Back Bending
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#backstrengthening" role="button" aria-expanded="false" aria-controls="backstrengthening">
+    Back Strengthening
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#backstretching" role="button" aria-expanded="false" aria-controls="backstretching">
+    Back Stretching
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#corestrengthening" role="button" aria-expanded="false" aria-controls="corestrengthening">
+    Core Strengthening
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#hipopening" role="button" aria-expanded="false" aria-controls="hipopening">
+    Hip Opening
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#hipstrengthening" role="button" aria-expanded="false" aria-controls="hipstrengthening">
+    Hip Strengthening
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#legstrengthening" role="button" aria-expanded="false" aria-controls="legstrengthening">
+    Leg Strengthening
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#legstretching" role="button" aria-expanded="false" aria-controls="legstretching">
+    Leg Stretching
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#sidebending" role="button" aria-expanded="false" aria-controls="sidebending">
+    Side Bending
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#twisting" role="button" aria-expanded="false" aria-controls="twisting">
+    Twisting
+  </a>
+</p>
+
+<div class="collapse" id="allposes">
+  <div class="card-columns">
     <% @poses.each do |pose| %>
     <div class="card">
       <h6 class="card-header"><%= pose.name %></h6>
@@ -44,5 +85,482 @@
     </div>
     <% end %>
   </div>
-  
-  <%= paginate @poses %>
+</div>
+
+<div class="collapse" id="balancing">
+    <div class="card-columns">
+    <% @balances.each do |balance| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == balance.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="collapse" id="forwardfold">
+    <div class="card-columns">
+    <% @forwardfolds.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="armshoulderstrengthening">
+    <div class="card-columns">
+    <% @armshoulderstrengthenings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="armshoulderstretching">
+    <div class="card-columns">
+    <% @armshoulderstretchings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="backbending">
+    <div class="card-columns">
+    <% @backbendings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="backstrengthening">
+    <div class="card-columns">
+    <% @backstrengthenings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="backstretching">
+    <div class="card-columns">
+    <% @backstretchings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="corestrengthening">
+    <div class="card-columns">
+    <% @corestrengthenings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="hipopening">
+    <div class="card-columns">
+    <% @hipopenings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="collapse" id="hipstrengthening">
+    <div class="card-columns">
+    <% @hipstrengthenings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="legstrengthening">
+    <div class="card-columns">
+    <% @legstrengthenings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="legstretching">
+    <div class="card-columns">
+    <% @legstretchings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="sidebending">
+    <div class="card-columns">
+    <% @sidebendings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="collapse" id="twisting">
+    <div class="card-columns">
+    <% @twistings.each do |task| %>
+    <% @poses.each do |pose| %>
+    <% if pose.id == task.pose_id %>
+    <div class="card">
+
+      <h6 class="card-header"><%= pose.name %></h6>
+      <div class="card-body">
+        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text"><%= pose.position %></p>
+        <div>
+        <form action="/create_sequence" method="post">
+            <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
+            <div class="form-group">
+              <label for="yogaflow_id">
+                Add to a Yogaflow
+              </label>
+              <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
+            </div>
+            <button class="btn btn-block btn-outline-secondary">
+              Add
+            </button>
+          </form>
+          </div>
+      </div>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

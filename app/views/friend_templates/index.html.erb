@@ -36,19 +36,19 @@
     <% @friends.where(follower_id: current_user.id).each do |friend| %>
       <tr>
         <td>
-          <%= friend.leader_id.username %>
+          <%= User.find(friend.leader_id).username %>
         </td>
 
         <td>
-          <%= friend.leader_id.profile %>
+          <%= User.find(friend.leader_id).profile %>
         </td>
 
         <td>
-          <%= friend.leader_id.profilepic %>
+          <%= User.find(friend.leader_id).profilepic %>
         </td>
 
         <td>
-          <a href="/friends/<%= friend.id %>">
+          <a href="/users/<%= friend.leader_id %>">
             Show details
           </a>
         </td>

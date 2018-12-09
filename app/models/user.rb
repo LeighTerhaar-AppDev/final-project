@@ -29,12 +29,14 @@ class User < ApplicationRecord
          
   has_many :yogaflows, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
-  has_many :teacherfriends, :class_name => "Friend", :foreign_key => "leader_id", :dependent => :destroy
-  has_many :studentfriends, :class_name => "Friend", :foreign_key => "follower_id", :dependent => :destroy
-
-  has_many :leaders, :through => :studentfriends, :source => :leader
-  has_many :followers, :through => :teacherfriends, :source => :follower
+  has_many :friendrequests, :class_name => "Friend", :foreign_key => "leader_id", :dependent => :destroy
+  has_many :requestedfriends, :class_name => "Friend", :foreign_key => "follower_id", :dependent => :destroy
+  
+  has_many :leaders, :through => :requestedfriends, :source => :follower
+  has_many :followers, :through => :friendrequests, :source => :leader
+ 
   has_many :favoriteyogaflows, :through => :favorites, :source => :yogaflow
+  
 
   validates  :username, presence: true, uniqueness: true
 end
