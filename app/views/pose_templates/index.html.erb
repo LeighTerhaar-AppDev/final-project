@@ -24,10 +24,11 @@
     <div class="card">
       <h6 class="card-header"><%= pose.name %></h6>
       <div class="card-body">
-        <p class="card-text"><%= pose.sanskrit %></p>
+        <p class="card-text font-italic"><%= pose.sanskrit %></p>
         <p class="card-text"><%= pose.position %></p>
-
+        
         <div>
+          
         <form action="/create_sequence" method="post">
             <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
             <div class="form-group">
