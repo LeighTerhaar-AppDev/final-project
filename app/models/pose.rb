@@ -53,6 +53,7 @@ class Pose < ApplicationRecord
     validates :name, presence: true
     validates :sanskrit, presence: true
     validates :position, presence: true
-   
+    
+
 
 end

@@ -1,22 +1,37 @@
-<h1>test page for poses</h1>
+<h1>Poses</h1>
 
-<%= search_form_for @q, { :url => "/poses/test" } do |f| %>
-  <p class="lead">Search Poses:</p>
+<div class="container border border-light mb-3 bg-light">
+    <div class="row">
+        <div class="col-sm-5 pt-2">
+          <%= search_form_for @q, { :url => "/poses/test" } do |f| %>
 
-    <div class="form-group">
-        <%= f.label :name_or_sanskrit_cont, "Search English or Sanskrit Name" %>
-        <%= f.text_field :name_or_sanskrit_cont, :class => "form-control" %>
+          
+              <div class="form-group">
+                  <%= f.label :name_or_sanskrit_cont, "Search English or Sanskrit Name" %>
+                  <%= f.text_field :name_or_sanskrit_cont, :class => "form-control" %>
+              </div>
+        </div>
+        <div class="col-sm-5 pt-2">
+          <div class="form-group">
+                  <%= f.label :position_eq, "Type of Pose" %>
+                  <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
+              </div>
+        </div>
+        <div class="col-sm-2 align-self-center pt-4">
+            <%= f.submit :class => "btn btn-primary btn-block" %>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <a href="/poses/test" class="btn btn-default btn-block">Clear filters</a>
+          <% end %>
+          </div>
+        </div>
     </div>
+</div>
+
+
     
-    <div class="form-group">
-        <%= f.label :position_eq, "Type of Pose" %>
-        <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
-    </div>
-
-  <%= f.submit :class => "btn btn-primary btn-block" %>
-  
-  <a href="/poses/test" class="btn btn-default btn-block">Clear filters</a>
-<% end %>
+    
 
 
 <div class="card-columns">
@@ -33,12 +48,12 @@
             <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
             <div class="form-group">
               <label for="yogaflow_id">
-                Add to a Yogaflow
+  
               </label>
               <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
             </div>
             <button class="btn btn-block btn-outline-secondary">
-              Add
+               <i class="fas fa-plus"></i>
             </button>
           </form>
           </div>

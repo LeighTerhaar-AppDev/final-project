@@ -12,7 +12,7 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Resources
+            <i class="fas fa-bars"></i>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -38,6 +38,10 @@
             <a href="/favorites" class="dropdown-item">
               Favorite Flows
             </a>
+            <a href="/poses" class="dropdown-item">
+              Poses
+            </a>
+            
             <% if current_user.blank? %>
             <a href="/users/<%= current_user %>" class="dropdown-item">
             My Profile
@@ -66,6 +70,7 @@
         <% else %>
           <li class="nav-item">
             <a href="/users/edit" class="nav-link">
+              <i class="fas fa-cog"></i>
               <%= current_user.username %>
             </a>
           </li>
