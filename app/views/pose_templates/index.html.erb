@@ -40,11 +40,10 @@
       <h6 class="card-header"><%= pose.name %></h6>
       <div class="card-body">
         <p class="card-text font-italic"><%= pose.sanskrit %></p>
-        <p class="card-text"><%= pose.position %></p>
+        <p class="card-text font-weight-light"><%= pose.position %></p>
         
-        <div>
-          
-        <form action="/create_sequence" method="post">
+          <form action="/create_sequence" method="post" class="form-inline">
+          <div class="row">
             <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
             <div class="form-group">
               <label for="yogaflow_id">
@@ -52,11 +51,11 @@
               </label>
               <%= select_tag(:yogaflow_id, options_from_collection_for_select(Yogaflow.where(user_id: current_user.id), :id, :title), :class => "form-control") %>
             </div>
-            <button class="btn btn-block btn-outline-secondary">
+            <button class="btn btn-outline-secondary">
                <i class="fas fa-plus"></i>
             </button>
+            </div>
           </form>
-          </div>
       </div>
     </div>
     <% end %>

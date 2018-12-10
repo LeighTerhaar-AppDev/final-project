@@ -1,17 +1,19 @@
-<div>
-<div>
+<h1> <%= @user.username %> </h1>
+
+
+<div class="mb-3">
 <% if @user.id == current_user.id %>
-<a href="/yogaflows/new">Create a new flow</a>
+<a href="/yogaflows/new" class="text-link">Create a new flow</a>
 </div>
 <% else %>
-<div> 
+<div class="mb-3"> 
     <% @user.username %>
      <div>
         <% if @user.friendrequests.present? %>
           <% @user.friendrequests.each do |friend| %>
     
           <% if friend.follower_id == current_user.id %>
-            <a href="/delete_friend/<%= friend.id %>" class="btn btn-link">
+            <a href="/delete_friend/<%= friend.id %>" class="btn btn-outline-primary">
                 Unfollow
             </a>
          <% else %> 
@@ -20,7 +22,7 @@
         <form action="/create_friend" method="post">
         <input type="hidden" name="leader_id" value="<%= @user.id %>" >
           <input type="hidden" name="follower_id" value="<%= friend.follower_id %>" >
-          <button>
+          <button class="btn btn-outline-primary">
           Add Friend
           </button>
         </form>
@@ -33,7 +35,7 @@
         <form action="/create_friend" method="post">
         <input type="hidden" name="leader_id" value="<%= @user.id %>" >
           <input type="hidden" name="follower_id" value="<%= current_user.id %>" >
-          <button>
+          <button class="btn btn-outline-primary">
           Add Friend
           </button>
         </form>
@@ -41,17 +43,11 @@
       </div>
   </div>
 <% end %>
-</div>
 
-<div class="card w-75">
-  <div class="card-header">
-    <%= @user.username %>
-  </div>
-</div> 
 
-<div>
+<div class="card-columns">
     <% @yogaflow.each do |yogaflow| %>
-    <div class="card mb-3">
+    <div class="card">
         <div class="card-header">
             <h5>
                 <a href="/yogaflows/<%= yogaflow.id %>"><%= yogaflow.title %>
@@ -63,20 +59,20 @@
                 <h6 class="card-title">
                     Intention
                 </h6>
-                <p>
+                <p class="font-weight-light">
                     <%= yogaflow.intention %>
                 </p>
                 <h6 class="card-title">
                     <div>Description</div>
                 </h6>
-                <p>
+                <p class="font-weight-light">
                     <%= yogaflow.description %>
                 </p>
                 
                 <h6 class="card-title">
                     Style of Yoga
                 </h6>
-                 <p>
+                 <p class="font-weight-light">
                     <%= yogaflow.yogatype %>
                 </p>
                 <div class="text-muted">
@@ -104,6 +100,10 @@
              
                           <% end %>
                         <% end %>
+                            <% elsif yogaflow.user_id == current_user.id %>
+                            <div>
+                                
+                            </div>
                             <% else %>
                                 <form action="/create_favorite" method="post">
                                 <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
