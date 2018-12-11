@@ -24,4 +24,7 @@ class Yogaflow < ApplicationRecord
 
     validates  :user_id, presence: true
     validates :title, presence: true
+    validates :description, presence: true
+    validates :intention, presence: true
+    validates :yogatype, presence: true
 end

@@ -1,4 +1,4 @@
-<h1>All Community Yogaflows</h1>
+<h1>All Community Yoga Flows</h1>
 
 <div class="container border border-light mb-3 mt-3 bg-light">
     <div class="row">
@@ -13,8 +13,8 @@
         </div>
         <div class="col-sm-5 pt-2">
           <div class="form-group">
-              <%= f.label :title_or_description_cont, "Search Title or Description" %>
-              <%= f.text_field :title_or_description_cont, :class => "form-control" %>
+              <%= f.label :title_or_description_or_intention_cont, "Search Title, Intention, or Description" %>
+              <%= f.text_field :title_or_description_or_intention_cont, :class => "form-control" %>
           </div>
         </div>
         <div class="col-sm-2 align-self-center pt-4">
@@ -40,7 +40,7 @@
     </div>
     <div class="card-body">
       <div class="mb-3">
-        Created by <a href="users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
+        Created by <a href="/users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
       </div>
       <div class="card-text font-weight-bold">Intention: </div>
       <div class="card-text font-weight-light mb-3"><%= yogaflow.intention %></div>

@@ -12,20 +12,22 @@
         <% if @user.friendrequests.present? %>
           <% @user.friendrequests.each do |friend| %>
     
-          <% if friend.follower_id == current_user.id %>
+          <% if @user.friendrequests.where(follower_id: current_user.id).present? %>
+              <% if friend.follower_id == current_user.id %>
             <a href="/delete_friend/<%= friend.id %>" class="btn btn-outline-primary">
                 Unfollow
             </a>
+            <% else %>
+            <% end %>
          <% else %> 
-        </a>
         
-        <form action="/create_friend" method="post">
-        <input type="hidden" name="leader_id" value="<%= @user.id %>" >
-          <input type="hidden" name="follower_id" value="<%= friend.follower_id %>" >
-          <button class="btn btn-outline-primary">
-          Add Friend
-          </button>
-        </form>
+            <form action="/create_friend" method="post">
+                <input type="hidden" name="leader_id" value="<%= @user.id %>" >
+                  <input type="hidden" name="follower_id" value="<%= current_user.id %>" >
+                  <button class="btn btn-outline-primary">
+                  Add Friend
+                  </button>
+            </form>
   
     
           <% end %>
@@ -44,9 +46,37 @@
   </div>
 <% end %>
 
+<div class="container border border-light mb-3 mt-3 bg-light">
+    <div class="row">
+        <div class="col-sm-5 pt-2">
+          <%= search_form_for @yogaflow, { :url => "/users/" + @user.id.to_s } do |f| %>
+
+          <div class="form-group">
+              <%= f.label :title_cont, "Search Title" %>
+              <%= f.text_field :title_cont, :class => "form-control" %>
+          </div>
+              
+        </div>
+        <div class="col-sm-5 pt-2">
+          <div class="form-group">
+              <%= f.label :description_or_intention_cont, "Search Intention or Description" %>
+              <%= f.text_field :description_or_intention_cont, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-2 align-self-center pt-4">
+            <%= f.submit :class => "btn btn-primary btn-block" %>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <a href="/users/<%= @user.id %>" class="btn btn-default btn-block">Clear filters</a>
+          <% end %>
+          </div>
+        </div>
+    </div>
+</div>
 
 <div class="card-columns">
-    <% @yogaflow.each do |yogaflow| %>
+    <% @flows.each do |yogaflow| %>
     <div class="card">
         <div class="card-header">
             <h5>
@@ -84,15 +114,15 @@
                       <% yogaflow.favorites.each do |favorite| %>
                       <% if favorite.user_id == current_user.id %>
                         <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
-                            Unlike
+                            <i class="fas fa-star"></i> Remove from Favorites
                         </a>
                      <% else %> 
                
                     <form action="/create_favorite" method="post">
                     <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
                       <input type="hidden" name="user_id" value="<%= yogaflow.user.id %>" >
-                      <button>
-                      Like
+                      <button class="btn btn-outline-primary">
+                       <i class="far fa-star"></i> Add to Favorites
                       </button>
                     </form>
          
@@ -106,8 +136,8 @@
                             <form action="/create_favorite" method="post">
                             <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
                               <input type="hidden" name="user_id" value="<%= current_user.id %>" >
-                              <button>
-                              Like 2
+                              <button class="btn btn-outline-primary">
+                               <i class="far fa-star"></i>Add to Favorites
                               </button>
                             </form>
                     <% end %>

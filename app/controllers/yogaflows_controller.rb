@@ -13,13 +13,15 @@ class YogaflowsController < ApplicationController
   def show
     @yogaflow = Yogaflow.find(params.fetch("id_to_display"))
     @sequences= Sequence.where(yogaflow_id: @yogaflow.id)
+    
 
     render("yogaflow_templates/show.html.erb")
   end
   
   def show_myflows
     @user = User.find(params.fetch("user_id"))
-    @yogaflow = Yogaflow.where(user_id: @user.id)
+    @yogaflow = Yogaflow.where(user_id: @user.id).ransack(params[:q])
+    @flows = @yogaflow.result(:distinct => true).includes(:user).page(params[:page])
 
     render("yogaflow_templates/show_myflows.html.erb")
   end
@@ -79,11 +81,6 @@ class YogaflowsController < ApplicationController
 
     redirect_to("/yogaflows", :notice => "Yogaflow deleted successfully.")
   end
-  
-  def user_profile
-    @users = User.find(params.fetch("user_id"))
-    
-    render("yogaflow_templates/user_profile.html.erb")
-  end
+
   
 end

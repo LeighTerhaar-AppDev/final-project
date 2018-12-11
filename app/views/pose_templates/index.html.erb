@@ -42,6 +42,8 @@
         <p class="card-text font-italic"><%= pose.sanskrit %></p>
         <p class="card-text font-weight-light"><%= pose.position %></p>
         
+        <% if Yogaflow.where(user_id: current_user.id).present? %>
+        
           <form action="/create_sequence" method="post" class="form-inline">
           <div class="row">
             <input type="hidden" name="pose_id" class="form-control" value="<%= pose.id %>">
@@ -56,6 +58,14 @@
             </button>
             </div>
           </form>
+          
+        <% else %>
+        <div class="row">
+          <a href="/yogaflows/new" class="btn btn-outline-secondary">
+            Create a New Flow
+          </a>
+        </div>
+        <% end %>
       </div>
     </div>
     <% end %>

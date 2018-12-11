@@ -94,8 +94,6 @@ Rails.application.routes.draw do
 
   get("/users/:user_id", { :controller => "yogaflows", :action => "show_myflows" })
   
-  get("/users/:user_id/profile", { :controller => "yogaflows", :action => "user_profile" })
-
 
   # UPDATE
   get("/yogaflows/:prefill_with_id/edit", { :controller => "yogaflows", :action => "edit_form" })

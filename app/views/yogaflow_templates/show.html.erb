@@ -137,15 +137,15 @@
               <% @yogaflow.favorites.each do |favorite| %>
               <% if favorite.user_id == current_user.id %>
                 <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
-                    Remove from Favorites
+                  <i class="fas fa-star"></i> Remove from Favorites
                 </a>
              <% else %> 
        
             <form action="/create_favorite" method="post">
             <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>" >
               <input type="hidden" name="user_id" value="<%= @yogaflow.user.id %>" >
-              <button>
-              Like
+              <button class="btn btn-outline-primary">
+               <i class="far fa-star"></i> Add to Favorites
               </button>
             </form>
     
@@ -155,8 +155,8 @@
                     <form action="/create_favorite" method="post">
                     <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>" >
                       <input type="hidden" name="user_id" value="<%= current_user.id %>" >
-                      <button>
-                      Like 2
+                      <button class="btn btn-outline-primary">
+                      <i class="far fa-star"></i> Add to Favorites
                       </button>
                     </form>
             <% end %>

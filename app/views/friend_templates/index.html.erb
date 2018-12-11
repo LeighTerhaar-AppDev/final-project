@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <h1>
-      All friends
+      All Friends
     </h1>
 
     <a href="/friends/new" class="btn btn-block btn-outline-secondary">
@@ -22,11 +22,11 @@
         </th>
 
         <th>
-          Profile
+          Number of Yoga Flows
         </th>
 
         <th>
-           Picture
+           Number of Followers
         </th>
         
         <th>
@@ -40,11 +40,11 @@
         </td>
 
         <td>
-          <%= User.find(friend.leader_id).profile %>
+          <%= Yogaflow.where(user_id: friend.leader_id).count %>
         </td>
 
         <td>
-          <%= User.find(friend.leader_id).profilepic %>
+          <%= Friend.where(leader_id: User.find(friend.leader_id)).count %>
         </td>
 
         <td>
