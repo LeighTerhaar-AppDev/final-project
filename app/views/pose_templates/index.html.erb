@@ -13,10 +13,12 @@
         </div>
         <div class="col-sm-5 pt-2">
           <div class="form-group">
-                  <%= f.label :position_eq, "Type of Pose" %>
-                  <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
-              </div>
+            <%= f.label :position_eq, "Type of Pose" %>
+            <%= f.select :position_eq, options_from_collection_for_select(Pose.pluck(:position).uniq, :to_s, :to_s, @q.position_eq), { :include_blank => true}, :class => "form-control" %>
+          </div>
         </div>
+
+
         <div class="col-sm-2 align-self-center pt-4">
             <%= f.submit :class => "btn btn-primary btn-block" %>
         </div>
@@ -30,10 +32,6 @@
 </div>
 
 
-    
-    
-
-
 <div class="card-columns">
     <% @poses.each do |pose| %>
     <div class="card">
@@ -41,6 +39,7 @@
       <div class="card-body">
         <p class="card-text font-italic"><%= pose.sanskrit %></p>
         <p class="card-text font-weight-light"><%= pose.position %></p>
+
         
         <% if Yogaflow.where(user_id: current_user.id).present? %>
         

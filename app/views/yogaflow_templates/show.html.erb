@@ -62,8 +62,9 @@
   
         <dt>
         </dt>
-        <dd class="text-muted">
+        <dd class="text-muted"><small>
           Created <%= time_ago_in_words(@yogaflow.created_at) %> ago
+          </small>
         </dd>
       </div>
     </dl>
@@ -99,7 +100,7 @@
 <% if @yogaflow.user_id == current_user.id %>
 <div class="container">
   <div class="card mb-3">
-    <div class="card-header text-center font-weight-bold">
+    <div class="card-header text-center text-primary font-weight-bold">
       Add a Pose to This Yoga Flow
     </div>
 
