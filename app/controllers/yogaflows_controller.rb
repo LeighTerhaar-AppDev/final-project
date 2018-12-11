@@ -4,9 +4,8 @@ class YogaflowsController < ApplicationController
   end
   
   def index
-    @yogaflows = Yogaflow.all
-    @q = Pose.ransack(params[:q])
-    @poses = @q.result(:distinct => true)
+    @q = Yogaflow.ransack(params[:q])
+    @yogaflows = @q.result(:distinct => true).includes(:user).page(params[:page])
 
     render("yogaflow_templates/index.html.erb")
   end
@@ -81,5 +80,10 @@ class YogaflowsController < ApplicationController
     redirect_to("/yogaflows", :notice => "Yogaflow deleted successfully.")
   end
   
+  def user_profile
+    @users = User.find(params.fetch("user_id"))
+    
+    render("yogaflow_templates/user_profile.html.erb")
+  end
   
 end

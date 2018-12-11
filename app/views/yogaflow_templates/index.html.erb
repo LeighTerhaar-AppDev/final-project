@@ -1,3 +1,35 @@
+<h1>All Community Yogaflows</h1>
+
+<div class="container border border-light mb-3 mt-3 bg-light">
+    <div class="row">
+        <div class="col-sm-5 pt-2">
+          <%= search_form_for @q, { :url => "/yogaflows" } do |f| %>
+
+          <div class="form-group">
+              <%= f.label :user_username_cont, "Search Users" %>
+              <%= f.text_field :user_username_cont, :class => "form-control" %>
+          </div>
+              
+        </div>
+        <div class="col-sm-5 pt-2">
+          <div class="form-group">
+              <%= f.label :title_or_description_cont, "Search Title or Description" %>
+              <%= f.text_field :title_or_description_cont, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-2 align-self-center pt-4">
+            <%= f.submit :class => "btn btn-primary btn-block" %>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <a href="/yogaflows" class="btn btn-default btn-block">Clear filters</a>
+          <% end %>
+          </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="card-columns">
   <% @yogaflows.each do |yogaflow| %>
   <div class="card mb-3">
@@ -19,6 +51,8 @@
   </div>
   <% end %>
 </div>
+
+ <%= paginate @yogaflows %>
 
 
 

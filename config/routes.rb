@@ -93,6 +93,8 @@ Rails.application.routes.draw do
   get("/yogaflows/:id_to_display", { :controller => "yogaflows", :action => "show" })
 
   get("/users/:user_id", { :controller => "yogaflows", :action => "show_myflows" })
+  
+  get("/users/:user_id/profile", { :controller => "yogaflows", :action => "user_profile" })
 
 
   # UPDATE
