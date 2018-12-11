@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   # Routes for the Sequence resource:
 
   # CREATE
-  get("/sequences/new", { :controller => "sequences", :action => "new_form" })
+  # get("/sequences/new", { :controller => "sequences", :action => "new_form" })
   post("/create_sequence", { :controller => "sequences", :action => "create_row" })
 
   # READ
-  get("/sequences", { :controller => "sequences", :action => "index" })
-  get("/sequences/:id_to_display", { :controller => "sequences", :action => "show" })
+  # get("/sequences", { :controller => "sequences", :action => "index" })
+  # get("/sequences/:id_to_display", { :controller => "sequences", :action => "show" })
 
   # UPDATE
-  get("/sequences/:prefill_with_id/edit", { :controller => "sequences", :action => "edit_form" })
-  post("/update_sequence/:id_to_modify", { :controller => "sequences", :action => "update_row" })
+  # get("/sequences/:prefill_with_id/edit", { :controller => "sequences", :action => "edit_form" })
+  # post("/update_sequence/:id_to_modify", { :controller => "sequences", :action => "update_row" })
 
   # DELETE
   get("/delete_sequence/:id_to_remove", { :controller => "sequences", :action => "destroy_row" })
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get("/users", { :controller => "friends", :action => "index_allusers" })
 
   # UPDATE
-  get("/friends/:prefill_with_id/edit", { :controller => "friends", :action => "edit_form" })
+  # get("/friends/:prefill_with_id/edit", { :controller => "friends", :action => "edit_form" })
   post("/update_friend/:id_to_modify", { :controller => "friends", :action => "update_row" })
 
   # DELETE
@@ -50,11 +50,11 @@ Rails.application.routes.draw do
 
   # READ
   get("/favorites", { :controller => "favorites", :action => "index" })
-  get("/favorites/:id_to_display", { :controller => "favorites", :action => "show" })
+  # get("/favorites/:id_to_display", { :controller => "favorites", :action => "show" })
 
   # UPDATE
-  get("/favorites/:prefill_with_id/edit", { :controller => "favorites", :action => "edit_form" })
-  post("/update_favorite/:id_to_modify", { :controller => "favorites", :action => "update_row" })
+  # get("/favorites/:prefill_with_id/edit", { :controller => "favorites", :action => "edit_form" })
+  # post("/update_favorite/:id_to_modify", { :controller => "favorites", :action => "update_row" })
 
   # DELETE
   get("/delete_favorite/:id_to_remove", { :controller => "favorites", :action => "destroy_row" })
@@ -64,19 +64,19 @@ Rails.application.routes.draw do
   # Routes for the Pose resource:
 
   # CREATE
-  get("/poses/new", { :controller => "poses", :action => "new_form" })
-  post("/create_pose", { :controller => "poses", :action => "create_row" })
+  # get("/poses/new", { :controller => "poses", :action => "new_form" })
+  # post("/create_pose", { :controller => "poses", :action => "create_row" })
 
   # READ
   get("/poses", { :controller => "poses", :action => "index" })
   get("/poses/:id_to_display", { :controller => "poses", :action => "show" })
 
   # UPDATE
-  get("/poses/:prefill_with_id/edit", { :controller => "poses", :action => "edit_form" })
-  post("/update_pose/:id_to_modify", { :controller => "poses", :action => "update_row" })
+  # get("/poses/:prefill_with_id/edit", { :controller => "poses", :action => "edit_form" })
+  # post("/update_pose/:id_to_modify", { :controller => "poses", :action => "update_row" })
 
   # DELETE
-  get("/delete_pose/:id_to_remove", { :controller => "poses", :action => "destroy_row" })
+  # get("/delete_pose/:id_to_remove", { :controller => "poses", :action => "destroy_row" })
 
   #------------------------------
 
