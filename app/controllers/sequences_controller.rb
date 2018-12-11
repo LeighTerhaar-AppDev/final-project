@@ -55,9 +55,9 @@ class SequencesController < ApplicationController
 
   def destroy_row
     @sequence = Sequence.find(params.fetch("id_to_remove"))
-
+    
     @sequence.destroy
-
-    redirect_to("/sequences", :notice => "Sequence deleted successfully.")
+    
+    redirect_to("/yogaflows/#{@sequence.yogaflow_id}", :notice => "Sequence deleted successfully.")
   end
 end

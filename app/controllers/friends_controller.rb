@@ -11,6 +11,13 @@ class FriendsController < ApplicationController
 
     render("friend_templates/show.html.erb")
   end
+    
+  def index_allusers
+    @q = User.ransack(params[:q])
+    @users = @q.result(:distinct => true).page(params[:page])
+
+    render("friend_templates/index_allusers.html.erb")
+  end
 
   def new_form
     @friend = Friend.new

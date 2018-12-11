@@ -31,8 +31,7 @@ Rails.application.routes.draw do
   # READ
   get("/friends", { :controller => "friends", :action => "index" })
   get("/friends/:id_to_display", { :controller => "friends", :action => "show" })
-
-  get("/friends/flows", {:controller => "friends", :action => "show_flows"})
+  get("/users", { :controller => "friends", :action => "index_allusers" })
 
   # UPDATE
   get("/friends/:prefill_with_id/edit", { :controller => "friends", :action => "edit_form" })
@@ -93,7 +92,6 @@ Rails.application.routes.draw do
   get("/yogaflows/:id_to_display", { :controller => "yogaflows", :action => "show" })
 
   get("/users/:user_id", { :controller => "yogaflows", :action => "show_myflows" })
-  
 
   # UPDATE
   get("/yogaflows/:prefill_with_id/edit", { :controller => "yogaflows", :action => "edit_form" })

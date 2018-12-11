@@ -78,6 +78,7 @@
           <th scope="col">English Name </th>
           <th scope="col">Sanskrit Name </th>
           <th scope="col">Type of Pose </th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -86,6 +87,9 @@
           <td><%= sequence.pose.name %></td>
           <td><%= sequence.pose.sanskrit %></td>
           <td><%= sequence.pose.position %></td>
+          <td><a href="/delete_sequence/<%= sequence.id %>" class="btn btn-link">
+                  <i class="far fa-trash-alt"></i>
+                </a></td>
         </tr>
         <% end %>
       </tbody>
