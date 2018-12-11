@@ -1,5 +1,5 @@
 <div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
+  <div class="col">
     <h1>
       <%= @yogaflow.title %>
     </h1>
@@ -31,7 +31,7 @@
           <% else %>
             <div class="col">
               <a href="/users/<%= @yogaflow.user_id %>" class="btn btn-block btn-outline-secondary">
-                View All of <%= @yogaflow.user.username %>'s Flows
+                <i class="fas fa-user"></i> View All of <%= @yogaflow.user.username %>'s Flows
               </a>
             </div>
           <% end %>
@@ -75,7 +75,7 @@
   <div class="card-columns">
     <% @sequences.each do |sequence| %>
     <div class="card">
-      <h6 class="card-header"><%= sequence.pose.name %>
+      <h6 class="card-header"><%= sequence.id %><%= sequence.pose.name %>
         </h6>
       <div class="card-body">
         <p class="card-text font-italic"><%= sequence.pose.sanskrit %></p>
@@ -88,12 +88,11 @@
     <% end %>
   </div>
 
-
 <% if @yogaflow.user_id == current_user.id %>
 <div class="container">
   <div class="card mb-3">
-    <div class="card-header text-center">
-      Add a pose to this yoga flow
+    <div class="card-header text-center font-weight-bold">
+      Add a Pose to This Yoga Flow
     </div>
 
   <div class="card-body">
@@ -134,7 +133,7 @@
               <% @yogaflow.favorites.each do |favorite| %>
               <% if favorite.user_id == current_user.id %>
                 <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
-                    Unlike
+                    Remove from Favorites
                 </a>
              <% else %> 
        

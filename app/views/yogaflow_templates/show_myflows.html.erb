@@ -54,69 +54,65 @@
                 </a>
             </h5>
         </div>
-        <ul class="list-group">
-            <div class="card-body">
-                <h6 class="card-title">
-                    Intention
-                </h6>
-                <p class="font-weight-light">
-                    <%= yogaflow.intention %>
-                </p>
-                <h6 class="card-title">
-                    <div>Description</div>
-                </h6>
-                <p class="font-weight-light">
-                    <%= yogaflow.description %>
-                </p>
-                
-                <h6 class="card-title">
-                    Style of Yoga
-                </h6>
-                 <p class="font-weight-light">
-                    <%= yogaflow.yogatype %>
-                </p>
-                <div class="text-muted">
-                    Created <%= time_ago_in_words(yogaflow.created_at) %> ago
-                </div>
-                
-                 <!--for the likes button -->
-                    <div> 
-                      <div>
-                        <% if yogaflow.favorites.present? %>
-                          <% yogaflow.favorites.each do |favorite| %>
-                          <% if favorite.user_id == current_user.id %>
-                            <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
-                                Unlike
-                            </a>
-                         <% else %> 
-                   
-                        <form action="/create_favorite" method="post">
-                        <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
-                          <input type="hidden" name="user_id" value="<%= yogaflow.user.id %>" >
-                          <button>
-                          Like
-                          </button>
-                        </form>
-             
-                          <% end %>
-                        <% end %>
-                            <% elsif yogaflow.user_id == current_user.id %>
-                            <div>
-                                
-                            </div>
-                            <% else %>
-                                <form action="/create_favorite" method="post">
-                                <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
-                                  <input type="hidden" name="user_id" value="<%= current_user.id %>" >
-                                  <button>
-                                  Like 2
-                                  </button>
-                                </form>
-                        <% end %>
-                      </div>
-                    </div>
+        <div class="card-body">
+            <div class="font-weight-bold">
+                Intention
             </div>
-        </ul>
+            <div class="font-weight-light mb-3">
+                <%= yogaflow.intention %>
+            </div>
+            <div class="font-weight-bold">
+                <div>Description</div>
+            </div>
+            <div class="font-weight-light mb-3">
+                <%= yogaflow.description %>
+            </div>
+            
+            <div class="font-weight-bold">
+                Style of Yoga
+            </div>
+             <div class="font-weight-light mb-3">
+                <%= yogaflow.yogatype %>
+            </div>
+            <div class="text-muted"><small>
+                Created <%= time_ago_in_words(yogaflow.created_at) %> ago </small>
+            </div>
+            
+             <!--for the likes button -->
+                  <div>
+                    <% if yogaflow.favorites.present? %>
+                      <% yogaflow.favorites.each do |favorite| %>
+                      <% if favorite.user_id == current_user.id %>
+                        <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
+                            Unlike
+                        </a>
+                     <% else %> 
+               
+                    <form action="/create_favorite" method="post">
+                    <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
+                      <input type="hidden" name="user_id" value="<%= yogaflow.user.id %>" >
+                      <button>
+                      Like
+                      </button>
+                    </form>
+         
+                      <% end %>
+                    <% end %>
+                        <% elsif yogaflow.user_id == current_user.id %>
+                        <div>
+                            
+                        </div>
+                        <% else %>
+                            <form action="/create_favorite" method="post">
+                            <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
+                              <input type="hidden" name="user_id" value="<%= current_user.id %>" >
+                              <button>
+                              Like 2
+                              </button>
+                            </form>
+                    <% end %>
+                </div>
+        </div>
     </div>
     <% end %>
 </div>

@@ -1,19 +1,25 @@
-<div>
+<div class="card-columns">
   <% @yogaflows.each do |yogaflow| %>
   <div class="card mb-3">
     <div class="card-header">
-      <a href="users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
+      <a href="yogaflows/<%= yogaflow.id %>">
+        <h5><%= yogaflow.title %></h5>
+      </a>
     </div>
     <div class="card-body">
-      <a href="yogaflows/<%= yogaflow.id %>">
-        <h5 class="card-title"><%= yogaflow.title %></h5>
-      </a>
-      <p class="card-text">Intention: <%= yogaflow.intention %></p>
-      <p class="card-text">Description: <%= yogaflow.description %></p>
-      <p class="card-text"><small class="text-muted">Created <%= time_ago_in_words(yogaflow.created_at) %> ago. </small></p>
+      <div class="mb-3">
+        Created by <a href="users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
+      </div>
+      <div class="card-text font-weight-bold">Intention: </div>
+      <div class="card-text font-weight-light mb-3"><%= yogaflow.intention %></div>
+      <div class="card-text font-weight-bold">Description: </div>
+      <div class="card-text font-weight-light mb-3"><%= yogaflow.description %></div>
+      <div class="card-text"><small class="text-muted">Created <%= time_ago_in_words(yogaflow.created_at) %> ago. </small></div>
     </div>
   </div>
   <% end %>
 </div>
+
+
 
 
