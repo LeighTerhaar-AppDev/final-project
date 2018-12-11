@@ -1,11 +1,11 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <h1>
-      All favorites
+       Favorite Flows
     </h1>
 
-    <a href="/favorites/new" class="btn btn-block btn-outline-secondary">
-      Add a new favorite
+    <a href="/yogaflows" class="btn btn-block btn-outline-secondary">
+      View All Community Flows
     </a>
   </div>
 </div>
@@ -17,56 +17,47 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           User
         </th>
 
         <th>
-          Yogaflow
+          Title
+        </th>
+
+        <th>
+          Description
         </th>
 
         <th>
           Created at
         </th>
 
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @favorites.each do |favorite| %>
       <tr>
+        
         <td>
-          <%= favorite.id %>
+          <a href="/users/<%= favorite.user.id %>">
+            <%= favorite.user.username %>
+          </a>
         </td>
 
         <td>
-          <%= favorite.user_id %>
+          <a href="/yogaflows/<%= favorite.yogaflow.id %>">
+            <%= favorite.yogaflow.title %>
+          </a>
         </td>
 
         <td>
-          <%= favorite.yogaflow_id %>
+          <%= favorite.yogaflow.description %>
         </td>
-
         <td>
           <%= time_ago_in_words(favorite.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(favorite.updated_at) %> ago
-        </td>
 
-        <td>
-          <a href="/favorites/<%= favorite.id %>">
-            Show details
-          </a>
-        </td>
       </tr>
       <% end %>
     </table>

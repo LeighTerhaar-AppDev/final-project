@@ -71,22 +71,26 @@
 </div>
 
 
-  <h2 class="text-primary text-center">Poses</h2>
-  <div class="card-columns">
-    <% @sequences.each do |sequence| %>
-    <div class="card">
-      <h6 class="card-header"><%= sequence.id %><%= sequence.pose.name %>
-        </h6>
-      <div class="card-body">
-        <p class="card-text font-italic"><%= sequence.pose.sanskrit %></p>
-        <p class="card-text font-weight-light"><%= sequence.pose.position %></p>
-        <p>
-          <%= sequence.pose.picture %>
-        </p>
-      </div>
-    </div>
-    <% end %>
-  </div>
+  <h2 class="text-primary text-center">Flow</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">English Name </th>
+          <th scope="col">Sanskrit Name </th>
+          <th scope="col">Type of Pose </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sequences.each do |sequence| %>
+        <tr>
+          <td><%= sequence.pose.name %></td>
+          <td><%= sequence.pose.sanskrit %></td>
+          <td><%= sequence.pose.position %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
 
 <% if @yogaflow.user_id == current_user.id %>
 <div class="container">

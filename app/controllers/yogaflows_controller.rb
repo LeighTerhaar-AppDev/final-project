@@ -5,6 +5,8 @@ class YogaflowsController < ApplicationController
   
   def index
     @yogaflows = Yogaflow.all
+    @q = Pose.ransack(params[:q])
+    @poses = @q.result(:distinct => true)
 
     render("yogaflow_templates/index.html.erb")
   end
