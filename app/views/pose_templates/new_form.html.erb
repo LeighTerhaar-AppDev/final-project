@@ -1,0 +1,51 @@
+<h1>
+  Add a new pose
+</h1>
+
+
+<hr>
+
+<form action="/create_pose" method="post">
+
+  <div class="form-group">
+    <label for="yogaflow_id">
+      Yogaflow
+    </label>
+
+    <input type="text" id="yogaflow_id" name="yogaflow_id" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="sanskrit">
+      Sanskrit
+    </label>
+
+    <input type="text" id="sanskrit" name="sanskrit" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="picture">
+      Picture
+    </label>
+
+    <input type="text" id="picture" name="picture" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pose
+  </button>
+</form>
+
+<hr>
+
+<a href="/poses">
+  Go back
+</a>

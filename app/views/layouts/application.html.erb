@@ -25,8 +25,14 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+<body>
+  <%= render "shared/navbar" %>
+
+  <div class="container">
+    <%= render "shared/flashes" %>
+
     <%= yield %>
+  </div>
 
     <%= dev_tools if Rails.env.development? %>
   </body>

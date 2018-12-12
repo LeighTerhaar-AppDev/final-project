@@ -1,0 +1,59 @@
+<h1>All Community Yoga Flows</h1>
+
+<div class="container border border-light mb-3 mt-3 bg-light">
+    <div class="row">
+        <div class="col-sm-5 pt-2">
+          <%= search_form_for @q, { :url => "/yogaflows" } do |f| %>
+
+          <div class="form-group">
+              <%= f.label :user_username_cont, "Search Users" %>
+              <%= f.text_field :user_username_cont, :class => "form-control" %>
+          </div>
+              
+        </div>
+        <div class="col-sm-5 pt-2">
+          <div class="form-group">
+              <%= f.label :title_or_description_or_intention_cont, "Search Title, Intention, or Description" %>
+              <%= f.text_field :title_or_description_or_intention_cont, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-2 align-self-center pt-4">
+            <%= f.submit :class => "btn btn-primary btn-block" %>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <a href="/yogaflows" class="btn btn-default btn-block">Clear filters</a>
+          <% end %>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card-columns">
+  <% @yogaflows.each do |yogaflow| %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <a href="yogaflows/<%= yogaflow.id %>">
+        <h5><%= yogaflow.title %></h5>
+      </a>
+    </div>
+    <div class="card-body">
+      <div class="mb-3">
+        Created by <a href="/users/<%= yogaflow.user_id %>"><%= yogaflow.user.username %></a>
+      </div>
+      <div class="card-text font-weight-bold">Intention: </div>
+      <div class="card-text font-weight-light mb-3"><%= yogaflow.intention %></div>
+      <div class="card-text font-weight-bold">Description: </div>
+      <div class="card-text font-weight-light mb-3"><%= yogaflow.description %></div>
+      <div class="card-text"><small class="text-muted">Created <%= time_ago_in_words(yogaflow.created_at) %> ago. </small></div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+ <%= paginate @yogaflows %>
+
+
+
+

@@ -1,10 +1,15 @@
 source "https://rubygems.org"
 
+gem 'ransack'
+
+gem 'carrierwave'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'kaminari'
 gem "activeadmin"
 gem "devise"
 gem "jbuilder", "~> 2.5"
@@ -15,7 +20,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", ">= 1.3.0"
 
 group :production do
-  gem "pg"
+  gem "pg", "~> 0.18"
   gem "rails_12factor"
 end
 

@@ -1,0 +1,70 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+       Favorite Flows
+    </h1>
+
+    <a href="/yogaflows" class="btn btn-block btn-outline-secondary">
+      View All Community Flows
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+      </tr>
+
+      <% @favorites.each do |favorite| %>
+      <% if favorite.user_id == current_user.id %>
+      <tr>
+        
+        <td>
+          <a href="/users/<%= favorite.yogaflow.user.id %>">
+            <%= favorite.yogaflow.user.username %>
+          </a>
+        </td>
+
+        <td>
+          <a href="/yogaflows/<%= favorite.yogaflow.id %>">
+            <%= favorite.yogaflow.title %>
+          </a>
+        </td>
+
+        <td>
+          <%= favorite.yogaflow.description %>
+        </td>
+        <td>
+          <%= time_ago_in_words(favorite.created_at) %> ago
+        </td>
+
+      </tr>
+      
+      <% else %>
+      <% end %>
+      
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All Friends
+    </h1>
+
+    <a href="/users" class="btn btn-block btn-outline-secondary">
+      View All Users
+    </a>
+  </div>
+</div>
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          Name
+        </th>
+
+        <th>
+          Number of Yoga Flows
+        </th>
+
+        <th>
+           Number of Followers
+        </th>
+        
+        <th>
+        </th>
+      </tr>
+
+    <% @friends.where(follower_id: current_user.id).each do |friend| %>
+      <tr>
+        <td>
+          <%= User.find(friend.leader_id).username %>
+        </td>
+
+        <td>
+          <%= Yogaflow.where(user_id: friend.leader_id).count %>
+        </td>
+
+        <td>
+          <%= Friend.where(leader_id: User.find(friend.leader_id)).count %>
+        </td>
+
+        <td>
+          <a href="/users/<%= friend.leader_id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

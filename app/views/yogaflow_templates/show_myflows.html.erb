@@ -1,0 +1,136 @@
+<h1> <%= @user.username %> </h1>
+
+
+<div class="mb-3">
+<% if @user.id == current_user.id %>
+<a href="/yogaflows/new" class="text-link">Create a new flow</a>
+</div>
+<% else %>
+<div class="mb-3"> 
+    <% @user.username %>
+     <div>
+        <% @friends = Friend.where(leader_id: @user.id) %>
+            <% @friend = [] %>
+            <% @friends.each do |friend| %>
+            <% if friend.follower_id == current_user.id %>
+              <% @friend.push(friend) %>
+            <% end %>
+            <% end %>
+        
+          <% if @friend.present? %>
+    
+            <a href="/delete_friend/<%= @friend.first.id %>" class="btn btn-link">
+              <i class="fas fa-star"></i> Unfollow
+            </a>
+            <% else %>
+            <form action="/create_friend" method="post">
+                <input type="hidden" name="leader_id" value="<%= @user.id %>" >
+                <input type="hidden" name="follower_id" value="<%= current_user.id %>" >
+                  <button class="btn btn-outline-primary">
+                      Add Friend
+                  </button>
+            </form>
+          <% end %> 
+         
+         
+         
+        
+      </div>
+  </div>
+<% end %>
+
+<div class="container border border-light mb-3 mt-3 bg-light">
+    <div class="row">
+        <div class="col-sm-5 pt-2">
+          <%= search_form_for @yogaflow, { :url => "/users/" + @user.id.to_s } do |f| %>
+
+          <div class="form-group">
+              <%= f.label :title_cont, "Search Title" %>
+              <%= f.text_field :title_cont, :class => "form-control" %>
+          </div>
+              
+        </div>
+        <div class="col-sm-5 pt-2">
+          <div class="form-group">
+              <%= f.label :description_or_intention_cont, "Search Intention or Description" %>
+              <%= f.text_field :description_or_intention_cont, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-2 align-self-center pt-4">
+            <%= f.submit :class => "btn btn-primary btn-block" %>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <a href="/users/<%= @user.id %>" class="btn btn-default btn-block">Clear filters</a>
+          <% end %>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <% @flows.each do |yogaflow| %>
+    <div class="card">
+        <div class="card-header">
+            <h5>
+                <a href="/yogaflows/<%= yogaflow.id %>"><%= yogaflow.title %>
+                </a>
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="font-weight-bold">
+                Intention
+            </div>
+            <div class="font-weight-light mb-3">
+                <%= yogaflow.intention %>
+            </div>
+            <div class="font-weight-bold">
+                <div>Description</div>
+            </div>
+            <div class="font-weight-light mb-3">
+                <%= yogaflow.description %>
+            </div>
+            
+            <div class="font-weight-bold">
+                Style of Yoga
+            </div>
+             <div class="font-weight-light mb-3">
+                <%= yogaflow.yogatype %>
+            </div>
+            <div class="text-muted"><small>
+                Created <%= time_ago_in_words(yogaflow.created_at) %> ago </small>
+            </div>
+            
+             <!--for the likes button -->
+                  <div>
+                      <% @favorites = Favorite.where(yogaflow_id: yogaflow.id) %>
+                        <% @favorite = [] %>
+                        <% @favorites.each do |favorite| %>
+                        <% if favorite.user_id == current_user.id %>
+                          <% @favorite.push(favorite) %>
+                        <% end %>
+                        <% end %>
+                    
+                      <% if @favorite.present? %>
+        
+                        <a href="/delete_favorite/<%= @favorite.first.id %>" class="btn btn-link">
+                          <i class="fas fa-star"></i> Remove from Favorites
+                        </a>
+                        <% else %>
+                        <form action="/create_favorite" method="post">
+                            <input type="hidden" name="yogaflow_id" value="<%= yogaflow.id %>" >
+                              <input type="hidden" name="user_id" value="<%= current_user.id %>" >
+                              <button class="btn btn-outline-primary">
+                              <i class="far fa-star"></i> Add to Favorites
+                              </button>
+                            </form>
+                      <% end %>
+
+                      
+                      
+                   
+                </div>
+        </div>
+    </div>
+    <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221161615) do
+ActiveRecord::Schema.define(version: 20181205004500) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,6 +41,168 @@ ActiveRecord::Schema.define(version: 20180221161615) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "areas", force: :cascade do |t|
+    t.text "areaname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "armshoulderstrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "armshoulderstretchings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "backbendings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "backstrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "area_id"
+  end
+
+  create_table "backstretchings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "balances", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "corestrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "yogaflow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forwardfolds", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "leader_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hipopenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hipstrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "legstrengthenings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "legstretchings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "poses", force: :cascade do |t|
+    t.integer "yogaflow_id"
+    t.string "name"
+    t.string "sanskrit"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "position"
+  end
+
+  create_table "sequences", force: :cascade do |t|
+    t.integer "yogaflow_id"
+    t.integer "pose_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sidebendings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "twistings", force: :cascade do |t|
+    t.integer "pose_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.text "profile"
+    t.string "profilepic"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "yogaflows", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "intention"
+    t.string "description"
+    t.string "yogatype"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pose_id"
   end
 
 end

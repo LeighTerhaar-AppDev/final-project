@@ -1,0 +1,42 @@
+<% if @friend.errors.any? %>
+  <% @friend.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit friend #<%= @friend.id %>
+</h1>
+
+<hr>
+
+<form action="/update_friend/<%= @friend.id %>" method="post">
+
+  <div class="form-group">
+    <label for="follower_id">
+      Follower
+    </label>
+
+    <input type="text" id="follower_id" name="follower_id" class="form-control" value="<%= @friend.follower_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="leader_id">
+      Leader
+    </label>
+
+    <input type="text" id="leader_id" name="leader_id" class="form-control" value="<%= @friend.leader_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update friend
+  </button>
+</form>
+
+<hr>
+
+<a href="/friends">
+  Go back
+</a>

@@ -1,0 +1,56 @@
+<h1>
+  Create a New Yogaflow
+</h1>
+
+
+<hr>
+
+<form action="/create_yogaflow" method="post">
+
+  <div class="form-group">
+    <input type="hidden" name="user_id" class="form-control" value="<%= current_user.id %>" >
+  </div>
+
+  <div class="form-group">
+    <label for="title">
+      Yoga Flow Name
+    </label>
+
+    <input type="text" id="title" name="title" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="intention">
+      Intention
+    </label>
+
+    <input type="text" id="intention" name="intention" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="yogatype">
+      Style of Yoga
+    </label>
+
+    <input type="text" id="yogatype" name="yogatype" class="form-control">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create yogaflow
+  </button>
+</form>
+
+<hr>
+
+<a href="/yogaflows">
+  Go back
+</a>
+

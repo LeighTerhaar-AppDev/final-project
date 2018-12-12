@@ -1,0 +1,55 @@
+<h1>
+  Edit yogaflow #<%= @yogaflow.id %>
+</h1>
+
+<hr>
+
+<form action="/update_yogaflow/<%= @yogaflow.id %>" method="post">
+
+  <div class="form-group">
+
+    <input type="hidden" name="user_id" class="form-control" value="<%= @yogaflow.user_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <input type="text" id="title" name="title" class="form-control" value="<%= @yogaflow.title %>">
+  </div>
+
+  <div class="form-group">
+    <label for="intention">
+      Intention
+    </label>
+
+    <input type="text" id="intention" name="intention" class="form-control" value="<%= @yogaflow.intention %>">
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @yogaflow.description %>">
+  </div>
+
+  <div class="form-group">
+    <label for="yogatype">
+      Style of Yoga
+    </label>
+
+    <input type="text" id="yogatype" name="yogatype" class="form-control" value="<%= @yogaflow.yogatype %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update Yoga Flow
+  </button>
+</form>
+
+<hr>
+
+<a href="/yogaflows">
+  Go back
+</a>
