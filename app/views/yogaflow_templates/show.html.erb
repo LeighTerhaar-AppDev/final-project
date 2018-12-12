@@ -138,33 +138,29 @@
        <!--for the likes button -->
         <div> 
           <div>
-            <% if @yogaflow.favorites.present? %>
-              <% @yogaflow.favorites.each do |favorite| %>
-              <% if favorite.user_id == current_user.id %>
-                <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-link">
+            <% @favorites = Favorite.where(yogaflow_id: @yogaflow.id) %>
+                <% @favorite = [] %>
+                <% @favorites.each do |favorite| %>
+                <% if favorite.user_id == current_user.id %>
+                  <% @favorite.push(favorite) %>
+                <% end %>
+                <% end %>
+            
+              <% if @favorite.present? %>
+
+                <a href="/delete_favorite/<%= @favorite.first.id %>" class="btn btn-link">
                   <i class="fas fa-star"></i> Remove from Favorites
                 </a>
-             <% else %> 
-       
-            <form action="/create_favorite" method="post">
-            <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>" >
-              <input type="hidden" name="user_id" value="<%= @yogaflow.user.id %>" >
-              <button class="btn btn-outline-primary">
-               <i class="far fa-star"></i> Add to Favorites
-              </button>
-            </form>
-    
-              <% end %>
-            <% end %>
                 <% else %>
-                    <form action="/create_favorite" method="post">
+                <form action="/create_favorite" method="post">
                     <input type="hidden" name="yogaflow_id" value="<%= @yogaflow.id %>" >
                       <input type="hidden" name="user_id" value="<%= current_user.id %>" >
                       <button class="btn btn-outline-primary">
                       <i class="far fa-star"></i> Add to Favorites
                       </button>
                     </form>
-            <% end %>
+              <% end %>
+
           </div>
         </div>
   

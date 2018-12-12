@@ -66,6 +66,6 @@ class FriendsController < ApplicationController
 
     @friend.destroy
 
-    redirect_to("/yogaflows/", :notice => "Friend deleted successfully.")
+    redirect_back(:fallback_location => "/friends", :notice => "Friend deleted successfully.")
   end
 end

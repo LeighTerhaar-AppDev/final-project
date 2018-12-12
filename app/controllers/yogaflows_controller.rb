@@ -14,7 +14,7 @@ class YogaflowsController < ApplicationController
     @yogaflow = Yogaflow.find(params.fetch("id_to_display"))
     @sequences= Sequence.where(yogaflow_id: @yogaflow.id)
     
-
+    
     render("yogaflow_templates/show.html.erb")
   end
   
@@ -23,6 +23,8 @@ class YogaflowsController < ApplicationController
     @yogaflow = Yogaflow.where(user_id: @user.id).ransack(params[:q])
     @flows = @yogaflow.result(:distinct => true).includes(:user).page(params[:page])
 
+
+      
     render("yogaflow_templates/show_myflows.html.erb")
   end
 

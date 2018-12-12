@@ -58,6 +58,6 @@ class FavoritesController < ApplicationController
 
     @favorite.destroy
 
-    redirect_to("/favorites", :notice => "Favorite deleted successfully.")
+    redirect_back(:fallback_location => "/favorites", :notice => "Favorite deleted successfully.")
   end
 end
